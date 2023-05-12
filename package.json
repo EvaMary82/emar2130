@@ -1,0 +1,21 @@
+{
+  "name": "emar2130-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "prestart": "parcel build ./public/index.html",
+    "dev": "parcel serve ./public/index.html",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eva Mary",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sass": "^1.62.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
+}
