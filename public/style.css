@@ -1,22 +1,17 @@
-.layout-grid {
-  grid-row-gap: 5%;
-  grid-column-gap: 5%;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 15%;
-  padding-bottom: 25%;
-  background-color: #dfd4ff;
-  display: grid;
-}
-a{
-  text-decoration: underline;
-}
-.hero-heading{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/* I used this to0 get rid of the weird border that I was getting */ 
+.hero-section{
   background-color: #6f43f5;
-  border-bottom: 1px solid #e4ebf3;
-  /*padding:30px 80px;*/
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /*border-bottom: 1px solid #e4ebf3;
+  padding:30px 80px;
   font-weight: 700;
-  position: relative;
+  position: relative;*/
 }
 /*.container{
   width: 100%;
@@ -24,12 +19,11 @@ a{
   margin-left: auto;
   margin-right: auto;
 }*/
-.hero-wrapper{
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-}
+
 .hero-image{
+  flex: 1;
+  margin-left: auto;
+  /*text-align: right; this is used to style text not to position elements*/ 
   /*max-width: 20%;
   max-height: 30%;
   position: relative;
@@ -38,13 +32,7 @@ a{
   padding-right: 0%;*/
   
 }
-.hero-split {
-  max-width: 50%;
-  /*flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;*/
-}
+
 
 .button-primary {
   color: #000;
@@ -67,11 +55,25 @@ background-color: #43464d;
 .shadow-two {
   box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
 }
-.heading{
+.header-text{
   color: #fffdfd;
   font-family: 'Merriweather', serif;
   font: 400;
 }
+.layout-grid {
+  grid-row-gap: 5%;
+  grid-column-gap: 5%;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 15%;
+  padding-bottom: 25%;
+  background-color: #dfd4ff;
+  display: grid;
+}
+a{
+  text-decoration: underline;
+}
+
 .image{
   width: auto;
   height: auto;
@@ -99,24 +101,26 @@ background-color: #43464d;
   margin-bottom: 0;
   padding: 65px 60px 99px;
 }
-.section{
-  margin-top: 0;
-  padding-top: 0;
+
+.footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  background-color: #6f43f5;
 }
 
-.image-2 {
-  width: 303px;
+.footer-image {
+  flex: 1;
+  text-align: left;
+  /*width: 303px;
   height: 301px;
   margin-top:0;
   margin-left: -20px;
-  padding-left: 0;
+  padding-left: 0;*/
 }
-.section-3 {
-  width: 100%;
-  height: 303px;
-  background-color: #6f43f5;
-}
-.button{
+
+.button-secondary{
   position: static;
   color: #000;
   letter-spacing: 2px;
@@ -128,19 +132,20 @@ background-color: #43464d;
   line-height: 20px;
   transition: all .2s;
 }
-.button:hover {
+.button-secondary:hover {
   color: #fff;
   background-color: #32343a;
 }
-.button:active {
+.button-.button-secondary {
 background-color: #43464d;
 }
-.shadow-two {
+/*.shadow-two {
   box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
-}
-.text-block {
+}*/
+.footer-text {
   font-family: Merriweather, serif;
-  font-size: 60px;
-  position: relative;
-  right: -157px;
+  flex: 1;
+  font-size: 30px;
+  /*position: relative;
+  right: -157px;*/
 }
