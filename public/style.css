@@ -1,13 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}/* I used this to0 get rid of the weird border that I was getting */ 
+  /*box-sizing: border-box;*/
+}/* I used this to get rid of the weird border that I was getting */ 
 .hero-section{
   background-color: #6f43f5;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  height:  auto;/* this makes usre that the height adjusts according to the elements that are placed within*/
   /*border-bottom: 1px solid #e4ebf3;
   padding:30px 80px;
   font-weight: 700;
@@ -22,7 +23,12 @@
 
 .hero-image{
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   margin-left: auto;
+  border: 1px solid red;
+}
   /*text-align: right; this is used to style text not to position elements*/ 
   /*max-width: 20%;
   max-height: 30%;
@@ -30,8 +36,12 @@
   height: auto;
   display: block;
   padding-right: 0%;*/
-  
-}
+
+.hero-image img {
+  max-width: 979px;
+  height: auto;
+  border: 1px solid red;
+}/* this styling property is used to ensure the image takes up the full width and is aligned to the right*/
 
 
 .button-primary {
@@ -74,7 +84,7 @@ a{
   text-decoration: underline;
 }
 
-.image{
+/*.image{
   width: auto;
   height: auto;
   flex: 0 auto;
@@ -83,7 +93,7 @@ a{
   margin-left: 65px;
   padding-top: 0;
   padding-right: 0;
-}
+}*/
 .body{
   padding-left: 0;
   padding-right: 0;
