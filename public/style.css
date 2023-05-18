@@ -80,10 +80,15 @@ background-color: #43464d;
   grid-column-gap: 5%;
   grid-template-rows: auto auto auto;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 15%;
+  padding-top: 10%;
   padding-bottom: 25%;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #dfd4ff;
   overflow-y: auto;
+}
+.layout-grid img{
+  max-width: 390px;
 }
 a{
   text-decoration: underline;
@@ -151,7 +156,7 @@ a{
   flex-direction: column;/*to create a vertical layout*/
   align-items: flex-end;/* to align items to the right*/
   flex-grow: 1;/* to have it take up the volume of the footer-section-container*/
-  margin-right: 10%;
+  margin-right: 7%;
   /*flex: 1; this is to make sure that the text-content container takes up the rest of the footer-section container*/
 }
 .footer-text {
