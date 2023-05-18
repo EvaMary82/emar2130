@@ -13,7 +13,28 @@
   <section class="hero-section">
         <div class="header-text-content">
           <h1 class ="header-text">Track your podcast addiction!</h1>
-          <a href="#" class="button-primary"> Add Title </a>
+          <a href="#" id="add-title-form" class="button-primary"> Add Title </a>
+        </div>
+        <div id="form-container">
+          <form id="podcastList">
+            <!--General Information -->
+            <div class="form-section" id="general-info">
+              <h4>General Information</h4>
+              <div class="form-row">
+              <label for="podcast name"> Podcast name :</label>
+              <input type="text" id="podcast name" name="podcast name" required="true"/>
+            </div>
+            <div class="form-row">
+              <label for="episode title"> Episode title:</label>
+              <input type="text" id="episode title" name="episode title" required="true"/>
+            </div>
+            <div class="form-row">
+              <label for="episode number">Episode number:</label>
+              <input type="text" id="episode number" name="episode number" required="true"/>
+            </div>
+            <button type="button" id="next-btn">Next</button>
+            </div>
+          </form>
         </div>
           <div class = "hero-image"> <img src ="images/hero-image.png"></div>
   </section>
@@ -23,23 +44,97 @@
     <h3>Philosophize This!</h3>
       <h4>The Denial of Death</h4> 
       <img src="images/star-icon.png" alt="star-icon" height="50px">
-  </div>
-  <div class="grid-item 1">
-    <img src="images/podcast (philosophy).png" alt="podcast-image(philosophy)">
-    <h3>Philosophize This!</h3>
-      <h4>The Denial of Death</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
       <img src="images/star-icon.png" alt="star-icon" height="50px">
   </div>
-    <img src ="images/podcast (news).png">
-    <img src ="images/podcast (self-care).png">
-    <img src ="images/podcast (finance).png">
-    <img src="images/podcast (crime).png">
-    <img src="images/podcast (comedy).png">
-    <img src="images/podcast (film & TV).png">
-    <img src="images/podcast (crime).png">
-    <img src ="images/podcast (crime).png">
-    <img src="images/podcast (self-care).png">
-    <img src="images/podcast (philosophy).png">
+  <div class="grid-item 2">
+    <img src="images/podcast (film & TV).png" alt="podcast-image(philosophy)">
+    <h3>The Bechdel Cast</h3>
+      <h4>George of the Jungle</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 3">
+    <img src="images/podcast (news).png" alt="podcast-image(philosophy)">
+    <h3>The Daily</h3>
+      <h4>China and Taiwan: A Torrid Backstory</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 4">
+    <img src="images/podcast (self-care).png" alt="podcast-image(philosophy)">
+    <h3>The Psychology of your 20’s</h3>
+      <h4>The Psychology of Narcisssim</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 5">
+    <img src="images/podcast (finance).png" alt="podcast-image(philosophy)">
+    <h3>We Study Billionaires</h3>
+      <h4>The Holy Grail of Long-Term Value Investing</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 6">
+    <img src="images/podcast (crime).png" alt="podcast-image(philosophy)">
+    <h3>Anatomy of Murder</h3>
+      <h4>Caught on Tape</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 7">
+    <img src="images/podcast (news).png" alt="podcast-image(philosophy)">
+    <h3>FT News Briefing</h3>
+      <h4>The Magic Kingdom goes to war</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 8">
+    <img src="images/podcast (comedy).png" alt="podcast-image(philosophy)">
+    <h3>The Viall Files</h3>
+      <h4>Going Deeper with Love is Blind’s Micah Lussier</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 9">
+    <img src="images/podcast (film & TV).png" alt="podcast-image(philosophy)">
+    <h3>The Rewatchables</h3>
+      <h4>The Purge</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 10">
+    <img src="images/podcast (crime).png" alt="podcast-image(philosophy)">
+    <h3>Stranger Danger</h3>
+      <h4>Death by Dinner</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 11">
+    <img src="images/podcast (self-care).png" alt="podcast-image(philosophy)">
+    <h3>The Psychology of your 20’s</h3>
+      <h4>The Psychology of Forgiveness</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+  </div>
+  <div class="grid-item 12">
+    <img src="images/podcast (philosophy).png" alt="podcast-image(philosophy)">
+    <h3>Philosophize This!</h3>
+      <h4>Being and Becoming</h4> 
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <img src="images/star-icon.png" alt="star-icon" height="50px">b
+  </div>
   </section>
   <section class="footer-section">
     <div class = "footer-image"> <img src ="images/footer-image.png"></div>

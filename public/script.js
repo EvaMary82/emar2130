@@ -1,5 +1,11 @@
+const addTitleButton = document.getElementById('add-title-form');
+const formContainer = document.getElementById('form-container')
+addTitleButton.addEventListener('click', ()=>{
+  formContainer.classList.toggle('show');
+});
+
 // Orginal code from the week 3 tutorial
-const form = document.getElementById("taskform");
+/*const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
 
 var taskList = [];
@@ -101,4 +107,4 @@ const button = document.getElementById("generateInvoice");
         totalParagraph.innerHTML = "Total: $"+ total;
       }
     })
-  })
+  })*/
