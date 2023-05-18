@@ -1,7 +1,8 @@
 const addTitleButton = document.getElementById('add-title-form');
 const formContainer = document.getElementById('form-container')
-addTitleButton.addEventListener('click', ()=>{
-  formContainer.classList.toggle('show');
+
+addTitleButton.addEventListener('click', function (){
+  formContainer.classList.toggle('active');
 });
 
 // Orginal code from the week 3 tutorial

@@ -15,10 +15,35 @@
           <h1 class ="header-text">Track your podcast addiction!</h1>
           <a href="#" id="add-title-form" class="button-primary"> Add Title </a>
         </div>
-        <div id="form-container">
+        <aside id="form-container">
           <form id="podcastList">
-            <!--General Information -->
+                    <!-- Form Steps / Progress Bar -->
+        <ul class="multi-step-form">
+          <!-- Step 1 -->
+          <li class="form-stepper-active text-center form-stepper-list" step="1">
+              <a class="mx-2">
+                  <span class="form-stepper-circle">
+                      <span>General info</span>
+                  </span>
+              </a>
+          </li>
+          <!-- Step 2 -->
+          <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+              <a class="mx-2">
+                  <span class="form-stepper-circle text-muted">
+                      <span>Content info</span>
+                  </span>
+              </a>
+          </li>
+          <!-- Step 3 -->
+          <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+              <a class="mx-2">
+                  <span class="form-stepper-circle text-muted">
+                      <span>Additional info</span>
+                  </span>
+            <!--General Information 
             <div class="form-section" id="general-info">
+              <h4>General Information</h4>
               <h4>General Information</h4>
               <div class="form-row">
               <label for="podcast name"> Podcast name :</label>
@@ -33,9 +58,9 @@
               <input type="text" id="episode number" name="episode number" required="true"/>
             </div>
             <button type="button" id="next-btn">Next</button>
-            </div>
+            </div>-->
           </form>
-        </div>
+        </aside>
           <div class = "hero-image"> <img src ="images/hero-image.png"></div>
   </section>
   <section class="layout-grid">
@@ -143,5 +168,6 @@
       <a href="#" class="button-secondary"> Add Title </a>
     </div>
 </section>
+<script src="script.js"></script>
 </body>
 </html>

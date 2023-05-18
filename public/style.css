@@ -60,6 +60,7 @@
  /*line-height: 20px;*/
   transition: all .2s;
   margin-left: 17%;
+  z-index: 1;
 }
 .button-primary:hover {
   color: #fff;
@@ -208,5 +209,25 @@ background-color: #43464d;
   box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
 }*/
 #form-container{
+  position: absolute;
+  /*offset-position: right;*/
+  offset-position: top;
+  /*offset-position: bottom;*/
+  right: 0%;
+  width: 50%;
+  min-height: 920px;
   background-color: #dfd4ff;
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius:30px ;
+  transition: right 0.3s ease-in-out; 
+  transform: translateX(100%);
+}
+#form-container.active {
+  transform: translateX(0%);
+}
+#podcastList {
+  padding: 10%;
+  
 }
