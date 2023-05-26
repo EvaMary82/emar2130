@@ -4,7 +4,106 @@ const formContainer = document.getElementById('form-container')
 addTitleButton.addEventListener('click', function (){
   formContainer.classList.toggle('active');
 });
+//Get all the star elements
+const stars = document.querySelectorAll('.star');
 
+// Add a click event listener to each star
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    // Toggle the active class on the clicked star
+    star.classList.toggle('active');
+  });
+});
+const steps = Array.from(document.querySelectorAll("form .step"));
+const nextBtn = document.querySelectorAll("form .next-btn");
+const prevBtn = document.querySelectorAll("form .previous-btn");
+const form = document.querySelector("form");
+
+nextBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("next");
+  });
+});
+prevBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("prev");
+  });
+});
+function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tag,genre, rating) {
+  const genre = localStorage.getItem('selectedGenre');
+  console.log('Podcast Name:', podcastName);
+  console.log('Episode Title:', episodeTitle);
+  console.log('Episode Number:', episodeNumber);
+  console.log('Platform:', platform);
+  console.log('Host:', host);
+  console.log('Tag:', tag);
+  console.log('Genre:', genre);
+  console.log('Rating:', rating);
+  let podcast = {
+    podcastName, 
+    episodeTitle,
+    platform,
+    host,
+    tag,
+    genre,
+    rating
+  }
+}
+form.addEventListener("submit", function(event){
+  event.preventDefault();
+  console.log(form.elements.taskName.value)
+  addPodcast(
+    form.elements.podcastName.value,
+    form.elements.episodeTitle.value, 
+    form.elements.episodeNumber.value,
+    form.elements.platform.value,
+    form.elements.host.value,
+    form.elements.tag.value,
+    form.elements.genre.value,
+    form.elements.rating.value
+  )
+  console.log(taskList)
+  /*const inputs = [];
+  form.querySelectorAll("input").forEach((input) => {
+    const { name, value } = input;
+    inputs.push({ name, value });
+  });
+  console.log(inputs);*/
+  form.reset();
+});
+
+function changeStep(btn) {
+  const activeStep = document.querySelector(".step.active");
+  const activeIndex = steps.indexOf(activeStep);
+
+  activeStep.classList.remove("active");
+
+  let index;
+  if (btn === "next") {
+    index = activeIndex + 1;
+  } else if (btn === "prev") {
+    index = activeIndex - 1;
+  }
+
+  if (index >= 0 && index < steps.length) {
+    steps[index].classList.add("active");
+  }
+}
+const genreItems = document.querySelectorAll('.genre-item');
+
+genreItems.forEach((item) => {
+  const image = item.querySelector('img');
+
+  image.addEventListener('click', () => {
+    // Remove 'active' class from all genre items
+    genreItems.forEach((item) => {
+      item.querySelector('img').classList.remove('active');
+    });
+
+    // Add 'active' class to the clicked genre item
+    image.classList.add('active');
+  });
+});
 // Orginal code from the week 3 tutorial
 /*const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
