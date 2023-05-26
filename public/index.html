@@ -16,35 +16,146 @@
           <a href="#" id="add-title-form" class="button-primary"> Add Title </a>
         </div>
         <aside id="form-container">
-          <form id="podcastList">
+          <div class="container">
+            <form>
+        
+              <div class="step step-1 active">
+                <div class="form-group">
+                  <label for="podcastName">Podcast Name</label>
+                  <input type="text" id="podcastName" name="podcastName" required="true">
+                </div>
+                <div class="form-group">
+                  <label for="episodeTitle">Episode title</label>
+                  <input type="text" id="episodeTitle" name="episodeTitle" required="true">
+                </div>
+                <div class="form-group">
+                  <label for="episodeNumber">Episode number</label>
+                  <input type="number" id="episodeNumber" name="episodeNumber" required="true">
+                </div>
+                <button type="button" class="next-btn">Next</button>
+              </div>
+        
+              <div class="step step-2">
+                <div class="form-group">
+                  <label for="genre">Genre  </label>
+                    <input type="hidden" id="genre" name="genre">
+    <div class="genre-carousel">
+      <div class="genre-item">
+        <input type="radio" id="genre-philosophy" name="genre" value="philosophy">
+  <label for="genre-philosophy">
+      <img src="images/podcast (philosophy).png" alt="podcast-image(philosophy)">
+      <span class="genre-name">Philosophy</span>
+      </label>
+    </div>
+      <div class="genre-item">
+        <input type="radio" id="genre-film & TV" name="genre" value="film & TV">
+  <label for="genre-film & TV">
+      <img src="images/podcast (film & TV).png" alt="podcast-image(film & TV)" >
+      <span class="genre-name">Film & TV</span>
+  </label>
+    </div>
+      <div class="genre-item">
+        <input type="radio" id="genre-news" name="genre" value="news">
+  <label for="genre-news">
+      <img src="images/podcast (news).png" alt="podcast-image(news)">
+      <span class="genre-name">News</span>
+  </label>
+    </div>
+      <div class="genre-item">
+        <input type="radio" id="genre-self-care" name="genre" value="self-care">
+        <label for="genre-self-care">
+      <img src="images/podcast (self-care).png" alt="podcast-image(self-care)">
+      <span class="genre-name">Self-care</span>
+    </label>
+    </div>
+      <div class="genre-item">
+        <input type="radio" id="genre-finance" name="genre" value="finance">
+        <label for="genre-finance">
+      <img src="images/podcast (finance).png" alt="podcast-image(finance)">
+      <span class="genre-name">Finance</span>
+    </label>
+    </div>
+      <div class="genre-item">
+        <input type="radio" id="genre-crime" name="genre" value="crime">
+        <label for="genre-crime">
+      <img src="images/podcast (crime).png" alt="podcast-image(crime)">
+      <span class="genre-name">Crime</span>
+    </label>
+    </div>
+      <div class="genre-item">
+        <input type="radio" id="genre-comedy" name="genre" value="comedy">
+        <label for="genre-comedy">
+      <img src="images/podcast (comedy).png" alt="podcast-image(comedy)">
+      <span class="genre-name">Comedy</span>
+        </label>
+    </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="rating">Rating</label>
+    <div class="star-rating">
+      <input type="radio" id="star-5" name="rating" value="5">
+      <label for="star-5" class="star">&#9733;</label>
+      <input type="radio" id="star-4" name="rating" value="4">
+      <label for="star-4" class="star">&#9733;</label>
+      <input type="radio" id="star-3" name="rating" value="3">
+      <label for="star-3" class="star">&#9733;</label>
+      <input type="radio" id="star-2" name="rating" value="2">
+      <label for="star-2" class="star">&#9733;</label>
+      <input type="radio" id="star-1" name="rating" value="1">
+      <label for="star-1" class="star">&#9733;</label>
+    </div>
+  </div>
+  <button type="button" class="previous-btn">Prev</button>
+  <button type="button" class="next-btn">Next</button>
+</div>
+        
+              <div class="step step-3">
+                <div class="form-group">
+                  <label for="platform">Platform</label>
+                  <input type="text" id="platform" name="platform" required="true">
+                </div>
+                <div class="form-group">
+                  <label for="host">Host</label>
+                  <input type="text" id="host" name="host" required="true">
+                </div>
+                <div class="form-group">
+                  <label for="tag">Tag</label>
+                  <input type="text" id="tag" name="tag" required="true">
+                </div>
+                <button type="button" class="previous-btn">Prev</button>
+                <button type="submit" class="submit-btn">Submit</button>
+              </div>
+        
+            </form>
+          </div>
+        </aside>
                     <!-- Form Steps / Progress Bar -->
+                  <!--  <div class="progress-bar">
+                      <div class="progress"></div>
+                    </div>
         <ul class="multi-step-form">
-          <!-- Step 1 -->
-          <li class="form-stepper-active text-center form-stepper-list" step="1">
-              <a class="mx-2">
+          
+          <li class="general information" step="1">
                   <span class="form-stepper-circle">
                       <span>General info</span>
                   </span>
-              </a>
           </li>
-          <!-- Step 2 -->
-          <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
-              <a class="mx-2">
-                  <span class="form-stepper-circle text-muted">
+          
+          <li class="content information" step="2">
+                  <span class="form-stepper-circle">
                       <span>Content info</span>
                   </span>
-              </a>
           </li>
-          <!-- Step 3 -->
-          <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
-              <a class="mx-2">
-                  <span class="form-stepper-circle text-muted">
+        
+          <li class="additional information" step="3">
+                  <span class="form-stepper-circle">
                       <span>Additional info</span>
                   </span>
-            <!--General Information 
-            <div class="form-section" id="general-info">
-              <h4>General Information</h4>
-              <h4>General Information</h4>
+          </li>
+          </ul>
+           <form id="podcastList">
+             <div class="form-section" id="general-info">
               <div class="form-row">
               <label for="podcast name"> Podcast name :</label>
               <input type="text" id="podcast name" name="podcast name" required="true"/>
@@ -58,9 +169,8 @@
               <input type="text" id="episode number" name="episode number" required="true"/>
             </div>
             <button type="button" id="next-btn">Next</button>
-            </div>-->
-          </form>
-        </aside>
+            </div>
+          </form>-->
           <div class = "hero-image"> <img src ="images/hero-image.png"></div>
   </section>
   <section class="layout-grid">
@@ -68,97 +178,121 @@
     <img src="images/podcast (philosophy).png" alt="podcast-image(philosophy)">
     <h3>Philosophize This!</h3>
       <h4>The Denial of Death</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 2">
     <img src="images/podcast (film & TV).png" alt="podcast-image(philosophy)">
     <h3>The Bechdel Cast</h3>
       <h4>George of the Jungle</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 3">
     <img src="images/podcast (news).png" alt="podcast-image(philosophy)">
     <h3>The Daily</h3>
       <h4>China and Taiwan: A Torrid Backstory</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 4">
     <img src="images/podcast (self-care).png" alt="podcast-image(philosophy)">
     <h3>The Psychology of your 20’s</h3>
       <h4>The Psychology of Narcisssim</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 5">
     <img src="images/podcast (finance).png" alt="podcast-image(philosophy)">
     <h3>We Study Billionaires</h3>
       <h4>The Holy Grail of Long-Term Value Investing</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 6">
     <img src="images/podcast (crime).png" alt="podcast-image(philosophy)">
     <h3>Anatomy of Murder</h3>
       <h4>Caught on Tape</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 7">
     <img src="images/podcast (news).png" alt="podcast-image(philosophy)">
     <h3>FT News Briefing</h3>
       <h4>The Magic Kingdom goes to war</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 8">
     <img src="images/podcast (comedy).png" alt="podcast-image(philosophy)">
     <h3>The Viall Files</h3>
       <h4>Going Deeper with Love is Blind’s Micah Lussier</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 9">
     <img src="images/podcast (film & TV).png" alt="podcast-image(philosophy)">
     <h3>The Rewatchables</h3>
       <h4>The Purge</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 10">
     <img src="images/podcast (crime).png" alt="podcast-image(philosophy)">
     <h3>Stranger Danger</h3>
       <h4>Death by Dinner</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 11">
     <img src="images/podcast (self-care).png" alt="podcast-image(philosophy)">
     <h3>The Psychology of your 20’s</h3>
       <h4>The Psychology of Forgiveness</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   <div class="grid-item 12">
     <img src="images/podcast (philosophy).png" alt="podcast-image(philosophy)">
     <h3>Philosophize This!</h3>
       <h4>Being and Becoming</h4> 
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">
-      <img src="images/star-icon.png" alt="star-icon" height="50px">b
+      <div class="stars-container">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+        <img src="images/star-icon.png" alt="star-icon" height="50px">
+      </div>
   </div>
   </section>
   <section class="footer-section">

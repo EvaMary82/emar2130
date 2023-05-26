@@ -50,7 +50,7 @@
   margin: 17%;/*did this styling so that the button styles accordingly because previously the margin-top property was not applying to the primary button class because of conflicting styles because the class sists inside the header text div*/
 }
 .button-primary {
-  color: #000;
+  color: #6f43f5;
   letter-spacing: 2px;
   background-color: #dfd4ff;
   padding: 12px 25px;
@@ -74,19 +74,50 @@ background-color: #43464d;
 }
 
 .layout-grid {
-  display: grid;
-  height: 1500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
   max-width: 1512px;
+ /* display: grid;
+  height: fit-content;
   grid-row-gap: 2%;
   grid-column-gap: 5%;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;*/
   padding-top: 10%;
   padding-bottom: 5%;
   padding-left: 5%;
   padding-right: 5%;
   background-color: #dfd4ff;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
+}
+.grid-item{
+  flex: 0 0 calc(33.33% - 5%);/*lex item should not grow or shrink, and it should have a fixed width based on the specified calculation. This allows you to have a consistent width for each grid item while still maintaining a responsive layout*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5%;
+  height: 600px; 
+}
+.grid-item h4 {
+  flex-grow: 1;
+  margin: 0;
+  word-wrap: break-word; /* Add this property to allow the <h4> element to wrap onto a new line if needed */
+}
+
+.grid-item .stars-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-item .stars-container img {
+  margin: 0 2px; /* Adjust the spacing between the star icons */
 }
 .layout-grid img{
   max-width: 390px;
@@ -97,6 +128,7 @@ background-color: #43464d;
 
 }
 .layout-grid h4{
+  
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   margin-bottom: 10%; /*does not work because some podcast is 2 lines and the stars do not appera in line*/
@@ -186,7 +218,7 @@ a{
   right: -157px;*/
 }
 .button-secondary {
-  color: #000;
+  color: #6f43f5;
   letter-spacing: 2px;
   background-color: #dfd4ff;
   padding: 12px 25px;
@@ -209,11 +241,9 @@ background-color: #43464d;
   box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
 }*/
 #form-container{
-  position: absolute;
-  /*offset-position: right;*/
-  offset-position: top;
-  /*offset-position: bottom;*/
-  right: 0%;
+  position: fixed;
+  top: 0;
+  right: 0;
   width: 50%;
   min-height: 920px;
   background-color: #dfd4ff;
@@ -227,7 +257,67 @@ background-color: #43464d;
 #form-container.active {
   transform: translateX(0%);
 }
-#podcastList {
-  padding: 10%;
-  
+.genre-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.genre-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10%;
+  scroll-snap-align: center;
+  cursor: pointer;
+}
+
+.genre-item img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent; /* Add a transparent border initially */
+  transition: border-color 0.3s ease; /* Add a transition for smooth animation */
+}
+.genre-item img:hover,
+.genre-item img.active{
+  border-color: #6f43f5;
+}
+.genre-name {
+  margin-top: 5%;
+}
+
+.star-rating input[type="radio"] {
+  display: none; /* Hide the default radio buttons */
+}
+.genre-item input[type="radio"] {
+  display: none; /* Hide the default radio buttons */
+}
+
+.star {
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.star.active {
+color:#6f43f5;
+}
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
+button.next-btn,
+button.submit-btn {
+  float: right;
+  cursor: pointer;
+  /* text-align: right; */
+}
+button.previous-btn{
+  float: left;
 }
