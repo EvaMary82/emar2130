@@ -29,7 +29,7 @@ prevBtn.forEach((button) => {
     changeStep("prev");
   });
 });
-function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tag,genre, rating) {
+function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tag,selectedGenre, rating) {
   const genre = localStorage.getItem('selectedGenre');
   console.log('Podcast Name:', podcastName);
   console.log('Episode Title:', episodeTitle);
@@ -37,7 +37,7 @@ function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, ta
   console.log('Platform:', platform);
   console.log('Host:', host);
   console.log('Tag:', tag);
-  console.log('Genre:', genre);
+  console.log('Genre:', selectedGenre);
   console.log('Rating:', rating);
   let podcast = {
     podcastName, 
@@ -63,7 +63,7 @@ form.addEventListener("submit", function(event){
     form.elements.rating.value
   )
 })
-  /*const inputs = [];
+ /* const inputs = [];
   form.querySelectorAll("input").forEach((input) => {
     const { name, value } = input;
     inputs.push({ name, value });
