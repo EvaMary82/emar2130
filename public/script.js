@@ -1,7 +1,7 @@
-const addTitleButton = document.getElementById('add-title-form');
-const formContainer = document.getElementById('form-container')
+const addTitleButton = document.querySelector('.button-primary');
+const formContainer = document.getElementById('form-container');
 
-addTitleButton.addEventListener('click', function (){
+addTitleButton.addEventListener('click', function () {
   formContainer.classList.toggle('active');
 });
 //Get all the star elements
@@ -62,15 +62,15 @@ form.addEventListener("submit", function(event){
     form.elements.genre.value,
     form.elements.rating.value
   )
-  console.log(taskList)
+})
   /*const inputs = [];
   form.querySelectorAll("input").forEach((input) => {
     const { name, value } = input;
     inputs.push({ name, value });
   });
-  console.log(inputs);*/
+  console.log(inputs)
   form.reset();
-});
+;*/
 
 function changeStep(btn) {
   const activeStep = document.querySelector(".step.active");
