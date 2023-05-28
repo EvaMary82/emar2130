@@ -18,6 +18,7 @@ const steps = Array.from(document.querySelectorAll("form .step"));
 const nextBtn = document.querySelectorAll("form .next-btn");
 const prevBtn = document.querySelectorAll("form .previous-btn");
 const form = document.querySelector("form");
+// Function to reset the form and go back to the first step
 
 nextBtn.forEach((button) => {
   button.addEventListener("click", () => {
@@ -29,7 +30,7 @@ prevBtn.forEach((button) => {
     changeStep("prev");
   });
 });
-function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tag,selectedGenre, rating) {
+/*function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tag,selectedGenre, rating) {
   const genre = localStorage.getItem('selectedGenre');
   console.log('Podcast Name:', podcastName);
   console.log('Episode Title:', episodeTitle);
@@ -48,10 +49,10 @@ function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, ta
     genre,
     rating
   }
-}
+}*/
 form.addEventListener("submit", function(event){
-  event.preventDefault();
-  console.log(form.elements.taskName.value)
+  event.preventDefault();//block default submission behaviour 
+  console.log(form.elements.podcastName.value)
   addPodcast(
     form.elements.podcastName.value,
     form.elements.episodeTitle.value, 
@@ -61,8 +62,89 @@ form.addEventListener("submit", function(event){
     form.elements.tag.value,
     form.elements.genre.value,
     form.elements.rating.value
-  )
+  );
+  form.reset(); 
 })
+var podcastList =[];
+function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tag,selectedGenre, rating) {
+let podcast = {
+  podcastName, 
+  episodeTitle,
+  platform,
+  host,
+  tag,
+  selectedGenre,
+  rating,
+  id: Date.now(),
+  date: new Date().toISOString(),
+};
+podcastList.push(podcast);
+localStorage.setItem('podcasts', JSON.stringify(podcastList));
+updatePodcastList();
+}
+if (localStorage.getItem('podcasts')) {
+  podcastList = JSON.parse(localStorage.getItem('podcasts'));
+}
+function updatePodcastList() {
+  let list = document.querySelector(".layout-grid");
+  list.innerHTML = "";
+  let podcastList = JSON.parse(localStorage.getItem('podcasts'));
+  if (podcastList !== null) {
+    podcastList.forEach((podcast) => {
+      let gridItem = document.createElement('div');
+      gridItem.className = 'grid-item';
+      
+      let image = document.createElement('img');
+      image.src = getGenreImageSource(podcast.selectedGenre);
+      image.alt = 'podcast-image(' + podcast.selectedGenre + ')';
+      
+      let podcastName = document.createElement('h3');
+      podcastName.textContent = podcast.podcastName;
+      
+      let episodeTitle = document.createElement('h4');
+      episodeTitle.textContent = podcast.episodeTitle;
+      
+      let starsContainer = document.createElement('div');
+      starsContainer.className = 'stars-container';
+      
+      for (let i = 0; i < podcast.rating; i++) {
+        let starIcon = document.createElement('img');
+        starIcon.src = 'images/star-icon.png'; 
+        starIcon.alt = 'star-icon';
+        starIcon.height = '50px';
+        starsContainer.appendChild(starIcon);
+      }
+      
+      gridItem.appendChild(image);
+      gridItem.appendChild(podcastName);
+      gridItem.appendChild(episodeTitle);
+      gridItem.appendChild(starsContainer);
+      
+      list.appendChild(gridItem);
+    });
+  }
+}
+function getGenreImageSource(genre) {
+  switch (genre) {
+    case 'philosophy':
+      return 'images/podcast (philosophy).png';
+    case 'film & TV':
+      return 'images/podcast (film & TV).png';
+    case 'news':
+      return 'images/podcast (news).png';
+    case 'self-care':
+      return 'images/podcast (self-care).png';
+    case 'finance':
+      return 'images/podcast (finance).png';
+    case 'crime':
+      return 'images/podcast (crime).png';
+    case 'comedy':
+      return 'images/podcast (comedy).png';
+    default:
+      return ''; // Provide a default image source or handle the case where genre is not recognized
+  }
+}
+console.log(podcastList);
  /* const inputs = [];
   form.querySelectorAll("input").forEach((input) => {
     const { name, value } = input;
@@ -70,7 +152,30 @@ form.addEventListener("submit", function(event){
   });
   console.log(inputs)
   form.reset();
-;*/
+;
+  data.forEach((country) => {
+        console.log(country)
+        
+        // Container for card (Div, with a class=".")
+        
+        
+        // Title: Heading == Country Name
+        
+        
+        // Description: Paragrph == Country Information
+        
+        
+        // Image: Image == Country Flag
+        
+        
+        // Appending all content to the card
+        
+        
+        // Append the content to the page
+        
+    })
+})
+*/
 
 function changeStep(btn) {
   const activeStep = document.querySelector(".step.active");
