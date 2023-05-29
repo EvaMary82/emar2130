@@ -70,6 +70,7 @@ function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, ta
 let podcast = {
   podcastName, 
   episodeTitle,
+  episodeNumber,
   platform,
   host,
   tag,
@@ -88,41 +89,50 @@ if (localStorage.getItem('podcasts')) {
 function updatePodcastList() {
   let list = document.querySelector(".layout-grid");
   list.innerHTML = "";
+
   let podcastList = JSON.parse(localStorage.getItem('podcasts'));
+  console.log(podcastList);
+
   if (podcastList !== null) {
     podcastList.forEach((podcast) => {
       let gridItem = document.createElement('div');
       gridItem.className = 'grid-item';
-      
+
       let image = document.createElement('img');
       image.src = getGenreImageSource(podcast.selectedGenre);
       image.alt = 'podcast-image(' + podcast.selectedGenre + ')';
-      
+
       let podcastName = document.createElement('h3');
       podcastName.textContent = podcast.podcastName;
-      
+
       let episodeTitle = document.createElement('h4');
       episodeTitle.textContent = podcast.episodeTitle;
-      
+
       let starsContainer = document.createElement('div');
       starsContainer.className = 'stars-container';
-      
+
       for (let i = 0; i < podcast.rating; i++) {
         let starIcon = document.createElement('img');
-        starIcon.src = 'images/star-icon.png'; 
-        starIcon.alt = 'star-icon';
+        starIcon.src = 'images/star-icon.png';
+        starIcon.alt = 'filled-star-icon';
         starIcon.height = '50px';
         starsContainer.appendChild(starIcon);
       }
-      
+
       gridItem.appendChild(image);
       gridItem.appendChild(podcastName);
       gridItem.appendChild(episodeTitle);
       gridItem.appendChild(starsContainer);
-      
+
       list.appendChild(gridItem);
     });
   }
+}
+
+// Move the initial loading of podcasts to the beginning of the script
+if (localStorage.getItem('podcasts')) {
+  podcastList = JSON.parse(localStorage.getItem('podcasts'));
+  updatePodcastList();
 }
 function getGenreImageSource(genre) {
   switch (genre) {
@@ -144,8 +154,8 @@ function getGenreImageSource(genre) {
       return ''; // Provide a default image source or handle the case where genre is not recognized
   }
 }
-console.log(podcastList);
- /* const inputs = [];
+ /*console.log(podcastList); 
+ const inputs = [];
   form.querySelectorAll("input").forEach((input) => {
     const { name, value } = input;
     inputs.push({ name, value });
