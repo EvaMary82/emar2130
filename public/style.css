@@ -253,6 +253,7 @@ background-color: #43464d;
   background-color: #dfd4ff;
   display: flex;
   flex-direction: column;
+  padding: 5%;
   border-bottom-left-radius: 30px;
   border-top-left-radius:30px ;
   transition: right 0.3s ease-in-out; 
@@ -260,6 +261,20 @@ background-color: #43464d;
 }
 #form-container.active {
   transform: translateX(0%);
+}
+form label{
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  margin-bottom:5%;
+}
+form input{
+  display: block;
+  margin-bottom: 7.5%;
+  width: 300px;
+  height: 60px;
+  border-radius: 15px;
+  border: 1px solid #6f43f5;
 }
 .genre-carousel {
   display: flex;
@@ -271,6 +286,7 @@ background-color: #43464d;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-right: 10%;
   scroll-snap-align: center;
   cursor: pointer;
@@ -283,13 +299,16 @@ background-color: #43464d;
   cursor: pointer;
   border: 3px solid transparent; /* Add a transparent border initially */
   transition: border-color 0.3s ease; /* Add a transition for smooth animation */
+  margin-bottom: 10%;
 }
 .genre-item img:hover,
 .genre-item img.active{
   border-color: #6f43f5;
 }
 .genre-name {
-  margin-top: 5%;
+  display: block;/*thedefault display-inline property was perventing my styles alignment from taking effect, used dev tools to figure this out*/
+  font-size: 15px;
+  text-align: center;
 }
 
 .star-rating input[type="radio"] {
@@ -299,16 +318,22 @@ background-color: #43464d;
   display: none; /* Hide the default radio buttons */
 }
 
+.star-rating {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically in the center */
+}
+
 .star {
   font-size: 50px;
   color: white;
   cursor: pointer;
   transition: color 0.3s ease;
   cursor: pointer;
+  margin-right: 10px; /* Add some spacing between stars */
 }
 
 .star.active {
-color:#6f43f5;
+  color: #6f43f5;
 }
 .step {
   display: none;
@@ -316,12 +341,26 @@ color:#6f43f5;
 .step.active {
   display: block;
 }
+.button-text{
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  margin: 20px;
+}
 button.next-btn,
 button.submit-btn {
+  height: 65px;
+  border-radius: 15px;
   float: right;
   cursor: pointer;
+  background-color: #6f43f5;
+  border: none;
+  color: #fff;
   /* text-align: right; */
 }
 button.previous-btn{
   float: left;
+  height: 65px;
+  border-radius: 15px;
+  border: 1px solid #6f43f5;
+  color:#6f43f5;
 }

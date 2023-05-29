@@ -21,23 +21,25 @@
         
               <div class="step step-1 active">
                 <div class="form-group">
-                  <label for="podcastName">Podcast Name</label>
+                  <label for="podcastName">Podcast Name :</label>
                   <input type="text" id="podcastName" name="podcastName" required="true">
                 </div>
                 <div class="form-group">
-                  <label for="episodeTitle">Episode title</label>
+                  <label for="episodeTitle">Episode title :</label>
                   <input type="text" id="episodeTitle" name="episodeTitle" required="true">
                 </div>
                 <div class="form-group">
-                  <label for="episodeNumber">Episode number</label>
+                  <label for="episodeNumber">Episode number :</label>
                   <input type="number" id="episodeNumber" name="episodeNumber" required="true">
                 </div>
-                <button type="button" class="next-btn">Next</button>
+                <button type="button" class="next-btn">
+                  <span class="button-text">Next</span>
+                </button>
               </div>
         
               <div class="step step-2">
                 <div class="form-group">
-                  <label for="genre">Genre  </label>
+                  <label for="genre">Genre :</label>
                     <input type="hidden" id="genre" name="genre">
     <div class="genre-carousel">
       <div class="genre-item">
@@ -92,7 +94,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="rating">Rating</label>
+    <label for="rating">Rating :</label>
     <div class="star-rating">
       <input type="radio" id="star-5" name="rating" value="5">
       <label for="star-5" class="star">&#9733;</label>
@@ -106,25 +108,33 @@
       <label for="star-1" class="star">&#9733;</label>
     </div>
   </div>
-  <button type="button" class="previous-btn">Prev</button>
-  <button type="button" class="next-btn">Next</button>
+  <button type="button" class="previous-btn">
+    <span class="button-text">Back</span>
+  </button>
+  <button type="button" class="next-btn">
+    <span class="button-text">Next</span>
+  </button>
 </div>
         
               <div class="step step-3">
                 <div class="form-group">
-                  <label for="platform">Platform</label>
+                  <label for="platform">Platform :</label>
                   <input type="text" id="platform" name="platform" required="true">
                 </div>
                 <div class="form-group">
-                  <label for="host">Host</label>
+                  <label for="host">Host :</label>
                   <input type="text" id="host" name="host" required="true">
                 </div>
                 <div class="form-group">
-                  <label for="tag">Tag</label>
+                  <label for="tag">Tag :</label>
                   <input type="text" id="tag" name="tag" required="true">
                 </div>
-                <button type="button" class="previous-btn">Prev</button>
-                <button type="submit" class="submit-btn">Submit</button>
+                <button type="button" class="previous-btn">
+                  <span class="button-text">Back</span>
+                </button>
+                <button type="submit" class="submit-btn">
+                  <span class="button-text">Submit</span>
+                </button>
               </div>
         
             </form>
