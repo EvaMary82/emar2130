@@ -6,6 +6,11 @@ const formContainer = document.getElementById('form-container');
 addTitleButton.addEventListener('click', function () {
   formContainer.classList.toggle('active');
 });
+const closeButton = document.querySelector('.close-button');
+
+closeButton.addEventListener('click', () => {
+  formContainer.classList.remove('active');
+});
 //Get all the star elements
 const stars = document.querySelectorAll('.star');
 
@@ -221,6 +226,18 @@ genreItems.forEach((item) => {
     image.classList.add('active');
   });
 });
+const gridItems = document.querySelectorAll('.grid-item');
+const moreInfoContainer = document.getElementById('more-info-container');
+const moreInfoCloseButton = document.querySelector('.more-info-close-button');
+
+  gridItems.forEach((gridItem) => {
+    gridItem.addEventListener('click', () => {
+      moreInfoContainer.classList.toggle('active');
+    });
+  });
+  moreInfoCloseButton.addEventListener('click', () => {
+    moreInfoContainer.classList.remove('active');
+  });
 // Orginal code from the week 3 tutorial
 /*const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");

@@ -262,6 +262,46 @@ background-color: #43464d;
 #form-container.active {
   transform: translateX(0%);
 }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid #6f43f5;
+}
+.close-button {
+  position: absolute;
+  top: 5%;
+  right:6%;
+  width: 55px;
+  height: 55px;
+  font-size: 40px;
+  background-color: white;
+  border: 2px solid #6f43f5;
+  border-radius: 30px;
+  color:#6f43f5;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #ff0000;
+}
+.more-info-close-button{
+  position: absolute;
+  top: 5%;
+  right: 6%;
+  width: 55px;
+  height: 55px;
+  font-size: 40px;
+  background-color: white;
+  border: 2px solid #6f43f5;
+  border-radius: 30px;
+  color:#6f43f5;
+  cursor: pointer;
+}
+.more-info-close-button:hover{
+  color: #ff0000; 
+}
+
 form label{
   display: block;
   font-family: 'Poppins', sans-serif;
@@ -276,6 +316,7 @@ form input{
   border-radius: 15px;
   border: 1px solid #6f43f5;
 }
+
 .genre-carousel {
   display: flex;
   flex-wrap: nowrap;
@@ -290,6 +331,7 @@ form input{
   margin-right: 10%;
   scroll-snap-align: center;
   cursor: pointer;
+  margin-bottom: 5%;
 }
 
 .genre-item img {
@@ -307,7 +349,7 @@ form input{
 }
 .genre-name {
   display: block;/*thedefault display-inline property was perventing my styles alignment from taking effect, used dev tools to figure this out*/
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -321,6 +363,7 @@ form input{
 .star-rating {
   display: flex; /* Use flexbox */
   align-items: center; /* Align items vertically in the center */
+  margin-bottom: 4.2%; /*to make sure that the buttons were in alignment between pages*/
 }
 
 .star {
@@ -363,4 +406,62 @@ button.previous-btn{
   border-radius: 15px;
   border: 1px solid #6f43f5;
   color:#6f43f5;
+}
+/*.hidden{
+  display: none;
+}*/
+#more-info-container{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  min-height: 920px;
+  background-color: white;
+  padding: 5%;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius:30px ;
+  transition: right 0.3s ease-in-out; 
+  transform: translateX(100%);
+  border: 2px solid #6f43f5;
+}
+#more-info-container.active{
+  transform: translateX(0%); 
+}
+.podcast-item img{
+  width: 255px;
+  height: 255px;
+  border-radius: 30px;
+}
+
+.more-info{
+display: flex;
+flex-direction: column;
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
+margin-left: 45%;
+margin-top: 10%;
+color: #6f43f5;
+
+}
+.field{
+  margin-bottom: 10%;
+}
+.podcast-item {
+  float: left;
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+#trashcan-icon{
+ height: 50px;
+ position: absolute;
+  bottom: 30%;
+  right: 6%;
+ 
+}
+.stars-container{
+  display: flex;
+justify-content: center;
+}
+.star-icon{
+  color: #6f43f5;
+  font-size: 50px;
 }
