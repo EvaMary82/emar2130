@@ -110,7 +110,10 @@ background-color: #43464d;
   margin: 0;
   word-wrap: break-word; /* Add this property to allow the <h4> element to wrap onto a new line if needed */
 }
-
+.filled-star-icon {
+  font-size: 50px; /* Set the desired size */
+  color: #6f43f5; /* Set the desired color */
+}
 .grid-item .stars-container {
   display: flex;
   align-items: center;

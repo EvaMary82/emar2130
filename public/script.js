@@ -1,3 +1,5 @@
+import images from './images/podcast (philosophy).png';
+console.log(images)
 const addTitleButton = document.querySelector('.button-primary');
 const formContainer = document.getElementById('form-container');
 
@@ -112,11 +114,10 @@ function updatePodcastList() {
       starsContainer.className = 'stars-container';
 
       for (let i = 0; i < podcast.rating; i++) {
-        let starIcon = document.createElement('img');
-        starIcon.src = 'images/star-icon.png';
-        starIcon.alt = 'filled-star-icon';
-        starIcon.height = '50px';
-        starsContainer.appendChild(starIcon);
+        let starIcon = document.createElement('span');
+  starIcon.innerHTML = '&#9733;';
+  starIcon.className = 'filled-star-icon';
+  starsContainer.appendChild(starIcon);
       }
 
       gridItem.appendChild(image);
@@ -137,21 +138,22 @@ if (localStorage.getItem('podcasts')) {
 function getGenreImageSource(genre) {
   switch (genre) {
     case 'philosophy':
-      return 'images/podcast (philosophy).png';
+      return require('./images/podcast (philosophy).png');
     case 'film & TV':
-      return 'images/podcast (film & TV).png';
+      return require('./images/podcast (film & TV).png');
     case 'news':
-      return 'images/podcast (news).png';
+      return require('./images/podcast (news).png');
     case 'self-care':
-      return 'images/podcast (self-care).png';
+      return require('./images/podcast (self-care).png');
     case 'finance':
-      return 'images/podcast (finance).png';
+      return require('./images/podcast (finance).png');
     case 'crime':
-      return 'images/podcast (crime).png';
+      return require('./images/podcast (crime).png');
     case 'comedy':
-      return 'images/podcast (comedy).png';
+      return require('./images/podcast (comedy).png');
     default:
-      return ''; // Provide a default image source or handle the case where genre is not recognized
+      return ''; // Provide a default image source or handle the case where the genre is not recognized
+
   }
 }
  /*console.log(podcastList); 
