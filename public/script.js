@@ -238,6 +238,16 @@ const moreInfoCloseButton = document.querySelector('.more-info-close-button');
   moreInfoCloseButton.addEventListener('click', () => {
     moreInfoContainer.classList.remove('active');
   });
+  const trashcanIcon = document.getElementById('trashcan-icon');
+  const confirmationModal = document.getElementById('confirmation-modal');
+  const confirmDeleteButton = document.getElementById('confirm-delete');
+  const refuseDeleteButton = document.getElementById('refuse-delete');
+  trashcanIcon.addEventListener('click', function(){
+    confirmationModal.style.display="block"
+  })
+  refuseDeleteButton.addEventListener('click', function(){
+    confirmationModal.style.display = 'none';
+  })
 // Orginal code from the week 3 tutorial
 /*const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");

@@ -249,7 +249,7 @@ background-color: #43464d;
   top: 0;
   right: 0;
   width: 50%;
-  min-height: 920px;
+  min-height: 800px;
   background-color: #dfd4ff;
   display: flex;
   flex-direction: column;
@@ -415,7 +415,7 @@ button.previous-btn{
   top: 0;
   right: 0;
   width: 50%;
-  min-height: 920px;
+  min-height: 800px;
   background-color: white;
   padding: 5%;
   border-bottom-left-radius: 30px;
@@ -453,8 +453,9 @@ color: #6f43f5;
 #trashcan-icon{
  height: 50px;
  position: absolute;
-  bottom: 30%;
+  bottom: 10%;
   right: 6%;
+  cursor: pointer;
  
 }
 .stars-container{
@@ -464,4 +465,45 @@ justify-content: center;
 .star-icon{
   color: #6f43f5;
   font-size: 50px;
+}
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 40%;
+  right: 10%;
+  width: fit-content;
+  height: fit-content;
+  background-color:#dfd4ff;
+  padding: 3%;
+  border-radius: 30px;
+  border:1px solid #6f43f5;
+}
+.modal p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  align-items: center;
+  white-space: nowrap;
+ 
+}
+#confirm-delete,
+#refuse-delete {
+  float: right;
+  margin: 5%;
+  width: 115px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 2%;
+  cursor: pointer;
+}
+#confirm-delete{
+  background-color: #6f43f5;
+  color: #fff;
+  border:1px solid #6f43f5;
+}
+#refuse-delete{
+  background-color: #fff;
+  color: #6f43f5;
+  border:1px solid #6f43f5;
 }
