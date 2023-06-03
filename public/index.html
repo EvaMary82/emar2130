@@ -7,7 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+  
+
 </head>
 <body class="body">
   <section class="hero-section">
@@ -129,8 +134,8 @@
                   <input type="text" id="host" name="host" required="true">
                 </div>
                 <div class="form-group">
-                  <label for="tag">Tag :</label>
-                  <input type="text" id="tag" name="tag" required="true">
+                  <label for="tags">Tag :</label>
+                  <input type="text" id="tags" name="tags" required="true" value="#fav">
                 </div>
                 <button type="button" class="previous-btn">
                   <span class="button-text">Back</span>
@@ -309,46 +314,45 @@
   </div>
   </section>
   <aside id="more-info-container"  >
-    <div class = 'podcast-item'>
-      <img src="images/podcast (philosophy).png">
-      <div class="stars-container">
-        <span class="star-icon">&#9733;</span>
-        <span class="star-icon">&#9733;</span>
-        <span class="star-icon">&#9733;</span>
+    <div class="podcast-item">
+      <div class="more-info-image">
+        <img id="genre-image" src="images/podcast (default).png">
+      </div>
+      <div class="stars-container" id="stars-container">
       </div>
     </div>
     <div class="more-info">
-    <div class="field">
-      <span>Date :</span>
-      <span>28/04/2023</span>
-    </div>
+      <div class="field">
+        <span>Date :</span>
+        <span id="more-info-date"></span>
+      </div>
     <div class="field">
       <span>Podcast Name :</span>
-      <span>Philosophize This!</span>
+      <span id ="more-info-podcastName"></span>
     </div>
     <div class="field">
       <span>Episode title :</span>
-      <span>The Denial of Death</span>
+      <span id ="more-info-episodeTitle"></span>
     </div>
     <div class="field">
       <span>Episode number :</span>
-      <span>162</span>
+      <span id ="more-info-episodeNumber"></span>
     </div>
     <div class="field">
       <span>Host(s) : </span>
-      <span>Steven West</span>
+      <span id="more-info-host"></span>
     </div>
     <div class="field">
       <span>Platform : </span>
-      <span>Spotify</span>
+      <span id="more-info-platform"></span>
     </div>
     <div class="field">
       <span>Genre : </span>
-      <span>Philosophy</span>
+      <span id = "more-info-genre"></span>
     </div>
     <div class="field">
       <span>Tags : </span>
-      <span>#Interview , #Fav</span>
+      <span id = "more-info-tags"></span>
     </div>
   </div>
     <button class="more-info-close-button">&times;</button>

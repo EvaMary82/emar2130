@@ -37,28 +37,15 @@ prevBtn.forEach((button) => {
     changeStep("prev");
   });
 });
-/*function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tag,selectedGenre, rating) {
-  const genre = localStorage.getItem('selectedGenre');
-  console.log('Podcast Name:', podcastName);
-  console.log('Episode Title:', episodeTitle);
-  console.log('Episode Number:', episodeNumber);
-  console.log('Platform:', platform);
-  console.log('Host:', host);
-  console.log('Tag:', tag);
-  console.log('Genre:', selectedGenre);
-  console.log('Rating:', rating);
-  let podcast = {
-    podcastName, 
-    episodeTitle,
-    platform,
-    host,
-    tag,
-    genre,
-    rating
-  }
-}*/
+// Retrieve the tags input element
+const tagsInput = document.getElementById('tags');
+
+// Initialize Tagify on the input element
+const tagify = new Tagify(tagsInput);
+
 form.addEventListener("submit", function(event){
   event.preventDefault();//block default submission behaviour 
+  const tagsArray = tagify.value.map((tag) => tag.value);
   console.log(form.elements.podcastName.value)
   addPodcast(
     form.elements.podcastName.value,
@@ -66,21 +53,21 @@ form.addEventListener("submit", function(event){
     form.elements.episodeNumber.value,
     form.elements.platform.value,
     form.elements.host.value,
-    form.elements.tag.value,
+    tagsArray,
     form.elements.genre.value,
     form.elements.rating.value
   );
   form.reset(); 
 })
 var podcastList =[];
-function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tag,selectedGenre, rating) {
+function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tags,selectedGenre, rating) {
 let podcast = {
   podcastName, 
   episodeTitle,
   episodeNumber,
   platform,
   host,
-  tag,
+  tags,
   selectedGenre,
   rating,
   id: Date.now(),
@@ -104,6 +91,7 @@ function updatePodcastList() {
     podcastList.forEach((podcast) => {
       let gridItem = document.createElement('div');
       gridItem.className = 'grid-item';
+     
 
       let image = document.createElement('img');
       image.src = getGenreImageSource(podcast.selectedGenre);
@@ -131,6 +119,8 @@ function updatePodcastList() {
       gridItem.appendChild(starsContainer);
 
       list.appendChild(gridItem);
+      gridItem.dataset.id = podcast.id;
+      list.appendChild(gridItem);
     });
   }
 }
@@ -157,7 +147,7 @@ function getGenreImageSource(genre) {
     case 'comedy':
       return require('./images/podcast (comedy).png');
     default:
-      return ''; // Provide a default image source or handle the case where the genre is not recognized
+      return require('./images/podcast (default).png'); // Provide a default image source or handle the case where the genre is not recognized
 
   }
 }
@@ -226,15 +216,56 @@ genreItems.forEach((item) => {
     image.classList.add('active');
   });
 });
+function getPodcastById(podcastId){
+  return podcastList.find((podcast) => podcast.id === parseInt(podcastId));
+}
 const gridItems = document.querySelectorAll('.grid-item');
 const moreInfoContainer = document.getElementById('more-info-container');
 const moreInfoCloseButton = document.querySelector('.more-info-close-button');
+let gridItem = null;
 
-  gridItems.forEach((gridItem) => {
-    gridItem.addEventListener('click', () => {
-      moreInfoContainer.classList.toggle('active');
+
+gridItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    moreInfoContainer.classList.toggle('active');
+    const podcastId = parseInt(item.dataset.id);
+    const podcast = getPodcastById(podcastId);
+
+ 
+      if (podcast){
+        gridItem = item;
+        const genreImage = document.getElementById('genre-image');
+      const genre = podcast.selectedGenre;
+      const imageSource = getGenreImageSource(genre);
+      genreImage.src = imageSource;
+
+      document.getElementById('more-info-date').textContent = podcast.date;
+    document.getElementById('more-info-podcastName').textContent = podcast.podcastName;
+    document.getElementById('more-info-episodeTitle').textContent = podcast.episodeTitle;
+    document.getElementById('more-info-episodeNumber').textContent = podcast.episodeNumber;
+    document.getElementById('more-info-host').textContent = podcast.host;
+    document.getElementById('more-info-platform').textContent = podcast.platform;
+    document.getElementById('more-info-genre').textContent = podcast.selectedGenre;
+    document.getElementById('more-info-tags').textContent = podcast.tag;
+
+    const starsContainer = document.getElementById('stars-container');
+    starsContainer.innerHTML = ''; // Clear any existing stars
+    const rating = podcast.rating;
+    for (let i = 0; i < rating; i++) {
+      let starIcon = document.createElement('span');
+      starIcon.innerHTML = '&#9733;';
+      starIcon.className = 'filled-star-icon';
+      starsContainer.appendChild(starIcon);
+  }
+}
     });
   });
+  
+  /*function getPodcastById(podcastId) {
+    const foundPodcast = podcastList.find((podcast) => podcast.id === podcastId);
+    console.log('Found podcast:', foundPodcast);
+    return foundPodcast;
+  }*/
   moreInfoCloseButton.addEventListener('click', () => {
     moreInfoContainer.classList.remove('active');
   });
@@ -248,107 +279,74 @@ const moreInfoCloseButton = document.querySelector('.more-info-close-button');
   refuseDeleteButton.addEventListener('click', function(){
     confirmationModal.style.display = 'none';
   })
-// Orginal code from the week 3 tutorial
-/*const form = document.getElementById("taskform");
-const tasklist = document.getElementById("tasklist");
+  confirmDeleteButton.addEventListener('click', function() {
+    if (gridItem && gridItem.dataset && gridItem.dataset.id) {
+      const podcastId = parseInt(gridItem.dataset.id);
+      deletePodcast(podcastId);
+    confirmationModal.style.display = 'none';
+    moreInfoContainer.classList.remove('active');
+  gridItem.style.display = 'none';
+  gridItem = null;// Reset gridItem after deletin
 
-var taskList = [];
-
-function addTask(name, type, rate, time, client) {
-  let task = {
-    name,
-    type,
-    id: Date.now(),
-    date: new Date().toISOString(),
-    rate,
-    time,
-    client,
-    billable: false
+  // Update the podcast list
+  updatePodcastList();
   }
-  taskList.push(task);
-  displayTask(task);
-}
+});
 
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  addTask(
-    form.elements.taskName.value,
-    form.elements.taskType.value,
-    form.elements.taskRate.value,
-    form.elements.taskTime.value,
-    form.elements.taskClient.value,
-  )
-})
-
-function displayTask(task) {
-  let item = document.createElement("li");
-  item.setAttribute("data-id", task.id);
-  item.innerHTML = 
-    `<p><strong>${task.name}</strong><br>${task.type}</p>
-     <span><em>${task.time} hours</em><br>$${task.rate}/hr</span>
-    `;
-
-  tasklist.appendChild(item);
-
-  form.reset();
-
-  let delButton = document.createElement("button");
-  let delButtonText = document.createTextNode("🗑️");
-  delButton.appendChild(delButtonText);
-  item.appendChild(delButton);
-
-  delButton.addEventListener("click", function(event) {
-
-    taskList.forEach(function(taskArrayElement, taskArrayIndex) {
-      if (taskArrayElement.id == item.getAttribute('data-id')) {
-        taskList.splice(taskArrayIndex, 1)
-      }
-    })
-
-    console.log(taskList)
-    item.remove();
+  function deletePodcast(podcastId) {
+    // Get the existing podcast list from local storage
+    let podcastList = JSON.parse(localStorage.getItem('podcasts'));
+  
+    // Find the index of the podcast with the matching ID
+    const index = podcastList.findIndex(podcast => podcast.id === podcastId);
+  
+    // If the podcast is found, remove it from the list
+    if (index !== -1) {
+      podcastList.splice(index, 1);
+  
+      // Save the updated podcast list back to local storage
+      localStorage.setItem('podcasts', JSON.stringify(podcastList));
+    }
+  }
+  /*confirmDeleteButton.addEventListener('click', function(){
+    const activePodcast = document.querySelector('.grid-item.active');
+  if (activePodcast) {
+    const podcastId = activePodcast.dataset.id;
+    deletePodcast(podcastId);
+    confirmationModal.style.display = 'none';
+  }
   })
 
-  // SECTION 1 CODE BELOW
+  function deletePodcast(podcastId){
+    let podcastList = getPodcastItemsFromStorage();
+    podcastList = podcastList.filter((podcast) => podcast.id !== podcastId);
+    savePodcastItemsToStorage(podcastList);
+    removePodcastItemFromGrid()
 
-  const inputElement = document.createElement("input");
-  inputElement.setAttribute("type", "checkbox");
-  const firstItem = item.firstElementChild;
-  firstItem.appendChild(inputElement);
-  inputElement.addEventListener('change', function(event){
-    const isChecked = event.target.checked;
-    taskList.forEach(function(task) {
-     if (task.id == item.getAttribute('data-id')){
-       if (isChecked){
-     inputElement.style.backgroundColor = (220, 255, 220);
-         task.billable = true;
-      } else{
-       inputElement.style.backgroundColor = "#FFFFFF" 
-         task.billable = false;
-      }
-     }
-    });
+    const podcastItems = getPodcastItemFromStorage();
+    const index = podcastItems.findIndex(item => item.id === podcastId);
+    if (index !== -1){
+      podcastItems.splice(index,1);
+      savePodcastItemsToStorage(podcastItems);
+      removePodcastItemsFromGrid(podcastId);
+    }
+    function removePodcastItemFromGrid(podcastId){
+      const gridItem = document.querySelector('.grid-tem[data-id"${podcastId}"]');
+      if (gridItem);
+      gridItem.remove();
+    }
+  }*/
+  function getPodcastItemsFromStorage(){
+    let podcastList = localStorage.getItem('podcast');
+    if (podcastList){
+      return JSON.parse(podcastList);
+    }
+    return [];
+  }
+  function savePodcastItemsToStorage(podcastList){
+    localStorage.setItem('podcast', JSON.stringify(podcastList));
+  }
+  moreInfoCloseButton.addEventListener('click', () => {
+    moreInfoContainer.classList.remove('active');
+    console.log('more-info-container class:', moreInfoContainer.classList);
   });
-  // Leave the bracket below to close the displayTask function
-
-}
-      
-
-
-
-// SECTION 2 CODE BELOW
-const button = document.getElementById("generateInvoice");
-  const table = document.getElementById("invoiceTable");
-  const clientParagraph = document.getElementById("client");
-  const totalParagraph = document.getElementById("total")
-  button.addEventListener("click", function(){
-    var total = 0 ;
-    taskList.forEach(function(task){
-      if (task.billable = true){
-        clientParagraph.textContent = task.client;
-        const price = task.rate * task.time;
-        total += price;
-        totalParagraph.innerHTML = "Total: $"+ total;
-      }
-    })
-  })*/
