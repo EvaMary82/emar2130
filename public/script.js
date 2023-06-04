@@ -112,6 +112,7 @@ function updatePodcastList() {
         starIcon.className = 'filled-star-icon';
         starsContainer.appendChild(starIcon);
       }
+      
 
       gridItem.appendChild(image);
       gridItem.appendChild(podcastName);
@@ -127,6 +128,7 @@ function updatePodcastList() {
       genreImage.src = imageSource;
     });
   }
+  attachEventListeners(); // Attach event listeners to the new grid items
 }
 
 // Move the initial loading of podcasts to the beginning of the script
@@ -223,12 +225,12 @@ genreItems.forEach((item) => {
 function getPodcastById(podcastId) {
   return podcastList.find((podcast) => podcast.id === parseInt(podcastId));
 }
-const gridItems = document.querySelectorAll('.grid-item');
+
 const moreInfoContainer = document.getElementById('more-info-container');
 const moreInfoCloseButton = document.querySelector('.more-info-close-button');
-let gridItem = null;
-
-
+/*let gridItem = null;*/
+function attachEventListeners() {
+const gridItems = document.querySelectorAll('.grid-item');
 gridItems.forEach((item) => {
   item.addEventListener('click', () => {
     moreInfoContainer.classList.toggle('active');
@@ -260,10 +262,10 @@ gridItems.forEach((item) => {
         starIcon.innerHTML = '&#9733;';
         starIcon.className = 'filled-star-icon';
         starsContainer.appendChild(starIcon);
-      }
-    }
+      }}
+    });
   });
-});
+}
 
 /*function getPodcastById(podcastId) {
   const foundPodcast = podcastList.find((podcast) => podcast.id === podcastId);
