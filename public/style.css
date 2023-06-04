@@ -2,18 +2,22 @@
   margin: 0;
   /*padding: 0; this is redundant styling in developer tools*/
   /*box-sizing: border-box;*/
-}/* I used this to get rid of the weird border that I was getting */ 
-.hero-section{
+}
+
+/* I used this to get rid of the weird border that I was getting */
+.hero-section {
   background-color: #6f43f5;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height:  auto;/* this makes usre that the height adjusts according to the elements that are placed within*/
+  height: auto;
+  /* this makes usre that the height adjusts according to the elements that are placed within*/
   /*border-bottom: 1px solid #e4ebf3;
   padding:30px 80px;
   font-weight: 700;
   position: relative;*/
 }
+
 /*.container{
   width: 100%;
   max-width: 940px;
@@ -21,15 +25,16 @@
   margin-right: auto;
 }*/
 
-.hero-image{
+.hero-image {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-left: auto;
 }
-  /*text-align: right; this is used to style text not to position elements*/ 
-  /*max-width: 20%;
+
+/*text-align: right; this is used to style text not to position elements*/
+/*max-width: 20%;
   max-height: 30%;
   position: relative;
   height: auto;
@@ -39,16 +44,20 @@
 .hero-image img {
   max-width: 900px;
   height: auto;
-}/* this styling property is used to ensure the image takes up the full width and is aligned to the right*/
+}
 
-.header-text{
+/* this styling property is used to ensure the image takes up the full width and is aligned to the right*/
+
+.header-text {
   color: #fffdfd;
   font-family: 'Merriweather', serif;
   font-weight: 100;
   font-size: 64px;
   /*margin-left: 17%;*/
-  margin: 17%;/*did this styling so that the button styles accordingly because previously the margin-top property was not applying to the primary button class because of conflicting styles because the class sists inside the header text div*/
+  margin: 17%;
+  /*did this styling so that the button styles accordingly because previously the margin-top property was not applying to the primary button class because of conflicting styles because the class sists inside the header text div*/
 }
+
 .button-primary {
   color: #6f43f5;
   letter-spacing: 2px;
@@ -56,19 +65,22 @@
   padding: 12px 25px;
   font-family: 'Poppins', sans-serif;
   font-size: 40px;
-  border-radius:10px ;
- /*line-height: 20px;*/
+  border-radius: 10px;
+  /*line-height: 20px;*/
   transition: all .2s;
   margin-left: 17%;
   z-index: 1;
 }
+
 .button-primary:hover {
   color: #fff;
   background-color: #32343a;
 }
+
 .button-primary:active {
-background-color: #43464d;
+  background-color: #43464d;
 }
+
 .shadow-two {
   box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
 }
@@ -79,7 +91,7 @@ background-color: #43464d;
   align-items: flex-start;
   flex-wrap: wrap;
   width: fit-content;
-   /*max-width: 1512px;
+  /*max-width: 1512px;
  display: grid;
   height: fit-content;
   grid-row-gap: 2%;
@@ -93,8 +105,10 @@ background-color: #43464d;
   background-color: #dfd4ff;
   /*overflow-y: auto;*/
 }
-.grid-item{
-  flex: 0 0 calc(33.33% - 5%);/*lex item should not grow or shrink, and it should have a fixed width based on the specified calculation. This allows you to have a consistent width for each grid item while still maintaining a responsive layout*/
+
+.grid-item {
+  flex: 0 0 calc(33.33% - 5%);
+  /*lex item should not grow or shrink, and it should have a fixed width based on the specified calculation. This allows you to have a consistent width for each grid item while still maintaining a responsive layout*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,17 +117,23 @@ background-color: #43464d;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 5%;
-  height: 600px; 
+  height: 600px;
 }
+
 .grid-item h4 {
   flex-grow: 1;
   margin: 0;
-  word-wrap: break-word; /* Add this property to allow the <h4> element to wrap onto a new line if needed */
+  word-wrap: break-word;
+  /* Add this property to allow the <h4> element to wrap onto a new line if needed */
 }
+
 .filled-star-icon {
-  font-size: 50px; /* Set the desired size */
-  color: #6f43f5; /* Set the desired color */
+  font-size: 50px;
+  /* Set the desired size */
+  color: #6f43f5;
+  /* Set the desired color */
 }
+
 .grid-item .stars-container {
   display: flex;
   align-items: center;
@@ -121,23 +141,29 @@ background-color: #43464d;
 }
 
 .grid-item .stars-container img {
-  margin: 0 2px; /* Adjust the spacing between the star icons */
+  margin: 0 2px;
+  /* Adjust the spacing between the star icons */
 }
-.layout-grid img{
+
+.layout-grid img {
   max-width: 390px;
 }
-.layout-grid h3{
+
+.layout-grid h3 {
   font-size: 30px;
   margin-top: 5%;
 
 }
-.layout-grid h4{
-  
+
+.layout-grid h4 {
+
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
-  margin-bottom: 10%; /*does not work because some podcast is 2 lines and the stars do not appera in line*/
+  margin-bottom: 10%;
+  /*does not work because some podcast is 2 lines and the stars do not appera in line*/
 }
-a{
+
+a {
   text-decoration: underline;
 }
 
@@ -151,10 +177,11 @@ a{
   padding-top: 0;
   padding-right: 0;
 }*/
-.body{
+.body {
   padding-left: 0;
   padding-right: 0;
 }
+
 /*.grid{
   grid-column-gap: 50px;
   grid-row-gap: 200px;
@@ -194,21 +221,29 @@ a{
   margin-left: -20px;
   padding-left: 0;*/
 }
+
 .footer-image img {
   max-width: 606px;
   height: auto;
 }
+
 .footer-text-content {
   display: flex;
-  flex-direction: column;/*to create a vertical layout*/
-  align-items: flex-end;/* to align items to the right*/
-  flex-grow: 1;/* to have it take up the volume of the footer-section-container*/
+  flex-direction: column;
+  /*to create a vertical layout*/
+  align-items: flex-end;
+  /* to align items to the right*/
+  flex-grow: 1;
+  /* to have it take up the volume of the footer-section-container*/
   margin-right: 7%;
   /*flex: 1; this is to make sure that the text-content container takes up the rest of the footer-section container*/
 }
+
 .footer-text {
-  width: fit-content;/* to ensure that the width same as contents inside*/
-  white-space: nowrap;/* to ensure no line breaks in the text content*/
+  width: fit-content;
+  /* to ensure that the width same as contents inside*/
+  white-space: nowrap;
+  /* to ensure no line breaks in the text content*/
   font-family: Merriweather, serif;
   color: #fffdfd;
   /*flex: 0;*/
@@ -221,6 +256,7 @@ a{
   position: relative;
   right: -157px;*/
 }
+
 .button-secondary {
   color: #6f43f5;
   letter-spacing: 2px;
@@ -228,23 +264,27 @@ a{
   padding: 12px 25px;
   font-family: 'Poppins', sans-serif;
   font-size: 40px;
- border-radius:10px ;/*to make rounded corners*/
+  border-radius: 10px;
+  /*to make rounded corners*/
   /*justify-content: flex-end; Display inline property prevents flexbox from applying 
   margin-left: 17%;
   line-height: 20px;
   transition: all .2s;*/
 }
+
 .button-secondary:hover {
   color: #fff;
   background-color: #32343a;
 }
+
 .button- .button-secondary {
-background-color: #43464d;
+  background-color: #43464d;
 }
+
 /*.shadow-two {
   box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
 }*/
-#form-container{
+#form-container {
   position: fixed;
   top: 0;
   right: 0;
@@ -255,37 +295,23 @@ background-color: #43464d;
   flex-direction: column;
   padding: 5%;
   border-bottom-left-radius: 30px;
-  border-top-left-radius:30px ;
-  transition: right 0.3s ease-in-out; 
+  border-top-left-radius: 30px;
+  transition: right 0.3s ease-in-out;
   transform: translateX(100%);
 }
+
 #form-container.active {
   transform: translateX(0%);
 }
+
 .header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   border: 2px solid #6f43f5;
 }
-.close-button {
-  position: absolute;
-  top: 5%;
-  right:6%;
-  width: 55px;
-  height: 55px;
-  font-size: 40px;
-  background-color: white;
-  border: 2px solid #6f43f5;
-  border-radius: 30px;
-  color:#6f43f5;
-  cursor: pointer;
-}
 
-.close-button:hover {
-  color: #ff0000;
-}
-.more-info-close-button{
+.close-button {
   position: absolute;
   top: 5%;
   right: 6%;
@@ -295,20 +321,40 @@ background-color: #43464d;
   background-color: white;
   border: 2px solid #6f43f5;
   border-radius: 30px;
-  color:#6f43f5;
+  color: #6f43f5;
   cursor: pointer;
 }
-.more-info-close-button:hover{
-  color: #ff0000; 
+
+.close-button:hover {
+  color: #ff0000;
 }
 
-form label{
+.more-info-close-button {
+  position: absolute;
+  top: 5%;
+  right: 6%;
+  width: 55px;
+  height: 55px;
+  font-size: 40px;
+  background-color: white;
+  border: 2px solid #6f43f5;
+  border-radius: 30px;
+  color: #6f43f5;
+  cursor: pointer;
+}
+
+.more-info-close-button:hover {
+  color: #ff0000;
+}
+
+form label {
   display: block;
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
-  margin-bottom:5%;
+  margin-bottom: 5%;
 }
-form input{
+
+form input {
   display: block;
   margin-bottom: 7.5%;
   width: 300px;
@@ -323,6 +369,7 @@ form input{
   overflow-x: auto;
   scroll-snap-type: x mandatory;
 }
+
 .genre-item {
   display: flex;
   flex-direction: column;
@@ -339,31 +386,42 @@ form input{
   height: 180px;
   border-radius: 50%;
   cursor: pointer;
-  border: 3px solid transparent; /* Add a transparent border initially */
-  transition: border-color 0.3s ease; /* Add a transition for smooth animation */
+  border: 3px solid transparent;
+  /* Add a transparent border initially */
+  transition: border-color 0.3s ease;
+  /* Add a transition for smooth animation */
   margin-bottom: 10%;
 }
+
 .genre-item img:hover,
-.genre-item img.active{
+.genre-item img.active {
   border-color: #6f43f5;
 }
+
 .genre-name {
-  display: block;/*thedefault display-inline property was perventing my styles alignment from taking effect, used dev tools to figure this out*/
+  display: block;
+  /*thedefault display-inline property was perventing my styles alignment from taking effect, used dev tools to figure this out*/
   font-size: 20px;
   text-align: center;
 }
 
 .star-rating input[type="radio"] {
-  display: none; /* Hide the default radio buttons */
+  display: none;
+  /* Hide the default radio buttons */
 }
+
 .genre-item input[type="radio"] {
-  display: none; /* Hide the default radio buttons */
+  display: none;
+  /* Hide the default radio buttons */
 }
 
 .star-rating {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Align items vertically in the center */
-  margin-bottom: 4.2%; /*to make sure that the buttons were in alignment between pages*/
+  display: flex;
+  /* Use flexbox */
+  align-items: center;
+  /* Align items vertically in the center */
+  margin-bottom: 4.2%;
+  /*to make sure that the buttons were in alignment between pages*/
 }
 
 .star {
@@ -372,23 +430,28 @@ form input{
   cursor: pointer;
   transition: color 0.3s ease;
   cursor: pointer;
-  margin-right: 10px; /* Add some spacing between stars */
+  margin-right: 10px;
+  /* Add some spacing between stars */
 }
 
 .star.active {
   color: #6f43f5;
 }
+
 .step {
   display: none;
 }
+
 .step.active {
   display: block;
 }
-.button-text{
+
+.button-text {
   font-family: 'Poppins', sans-serif;
   font-size: 30px;
   margin: 20px;
 }
+
 button.next-btn,
 button.submit-btn {
   height: 65px;
@@ -400,17 +463,19 @@ button.submit-btn {
   color: #fff;
   /* text-align: right; */
 }
-button.previous-btn{
+
+button.previous-btn {
   float: left;
   height: 65px;
   border-radius: 15px;
   border: 1px solid #6f43f5;
-  color:#6f43f5;
+  color: #6f43f5;
 }
+
 /*.hidden{
   display: none;
 }*/
-#more-info-container{
+#more-info-container {
   position: fixed;
   top: 0;
   right: 0;
@@ -419,54 +484,63 @@ button.previous-btn{
   background-color: white;
   padding: 5%;
   border-bottom-left-radius: 30px;
-  border-top-left-radius:30px ;
-  transition: right 0.3s ease-in-out; 
+  border-top-left-radius: 30px;
+  transition: right 0.3s ease-in-out;
   transform: translateX(100%);
   border: 2px solid #6f43f5;
 }
-#more-info-container.active{
-  transform: translateX(0%); 
+
+#more-info-container.active {
+  transform: translateX(0%);
 }
-.podcast-item img{
+
+.podcast-item img {
   width: 255px;
   height: 255px;
   border-radius: 30px;
 }
 
-.more-info{
-display: flex;
-flex-direction: column;
-font-family: 'Poppins', sans-serif;
-font-size: 20px;
-margin-left: 45%;
-margin-top: 10%;
-color: #6f43f5;
+.more-info {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  margin-left: 45%;
+  margin-top: 10%;
+  color: #6f43f5;
 
 }
-.field{
+
+.field {
   margin-bottom: 10%;
 }
+
 .podcast-item {
   float: left;
-  margin-right: 20px; /* Adjust the margin as needed */
+  margin-right: 20px;
+  /* Adjust the margin as needed */
 }
-#trashcan-icon{
- height: 50px;
- position: absolute;
+
+#trashcan-icon {
+  height: 50px;
+  position: absolute;
   bottom: 10%;
   right: 6%;
   cursor: pointer;
- 
+
 }
-.stars-container{
+
+.stars-container {
   display: flex;
-justify-content: center;
+  justify-content: center;
 }
-.star-icon{
+
+.star-icon {
   color: #6f43f5;
   font-size: 50px;
 }
-.modal{
+
+.modal {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -474,18 +548,20 @@ justify-content: center;
   right: 10%;
   width: fit-content;
   height: fit-content;
-  background-color:#dfd4ff;
+  background-color: #dfd4ff;
   padding: 3%;
   border-radius: 30px;
-  border:1px solid #6f43f5;
+  border: 1px solid #6f43f5;
 }
-.modal p{
+
+.modal p {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   align-items: center;
   white-space: nowrap;
- 
+
 }
+
 #confirm-delete,
 #refuse-delete {
   float: right;
@@ -497,18 +573,20 @@ justify-content: center;
   padding: 2%;
   cursor: pointer;
 }
-#confirm-delete{
+
+#confirm-delete {
   background-color: #6f43f5;
   color: #fff;
-  border:1px solid #6f43f5;
-}
-#refuse-delete{
-  background-color: #fff;
-  color: #6f43f5;
-  border:1px solid #6f43f5;
+  border: 1px solid #6f43f5;
 }
 
-  /*.form-group .tagify__tag{
+#refuse-delete {
+  background-color: #fff;
+  color: #6f43f5;
+  border: 1px solid #6f43f5;
+}
+
+/*.form-group .tagify__tag{
     --tag-bg: #6f43f5;
     --tag-hover: #CE0078;
     --tag-text-color: #FFF;
@@ -520,32 +598,31 @@ justify-content: center;
     --tag-inset-shadow-size: 1.35em;
     --tag-remove-btn-bg--hover: black;
     }*/
-    .tagify {
-      display: inline-flex;
-      align-items: center;
-      flex-wrap: wrap;
-      border: 1px solid #6f43f5;
-      background-color: #FFF;
-      padding: 0;
-      line-height: 60px;
-      cursor: text;
-      outline: 0;
-      position: relative;
-      box-sizing: border-box;
-      transition: 0.1s;
-      border-radius: 15px;
-      min-width: 300px;
-      max-width: fit-content;
-      height: 60px;
-      margin-bottom: 7.5%;
-      font-size: 20px;
-      font-family: 'Poppins', sans-serif;
-      --tag-remove-btn-color: white;
-      --tag-remove-btn-bg--hover: #6f43f5;
-    }
-    .tagify__tag {
-      --tag-bg: #6f43f5;
-      --tag-text-color: #FFF;
-    }
-    
-    
+.tagify {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid #6f43f5;
+  background-color: #FFF;
+  padding: 0;
+  line-height: 60px;
+  cursor: text;
+  outline: 0;
+  position: relative;
+  box-sizing: border-box;
+  transition: 0.1s;
+  border-radius: 15px;
+  min-width: 300px;
+  max-width: fit-content;
+  height: 60px;
+  margin-bottom: 7.5%;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  --tag-remove-btn-color: white;
+  --tag-remove-btn-bg--hover: #6f43f5;
+}
+
+.tagify__tag {
+  --tag-bg: #6f43f5;
+  --tag-text-color: #FFF;
+}
