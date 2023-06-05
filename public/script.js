@@ -16,18 +16,18 @@ closeButton.addEventListener('click', () => {
 const stars = document.querySelectorAll('.star');
 
 // Add a click event listener to each star
-stars.forEach((star, index)  => {
+stars.forEach((star, index) => {
   star.addEventListener('click', () => {
     // Toggle the active class on the clicked star
     const rating = index + 1;
-// Toggle the active class on the stars up to the clicked star
-stars.forEach((s, i) => {
-  if (i < rating) {
-    s.classList.add('active');
-  } else {
-    s.classList.remove('active');
-  }
-});
+    // Toggle the active class on the stars up to the clicked star
+    stars.forEach((s, i) => {
+      if (i < rating) {
+        s.classList.add('active');
+      } else {
+        s.classList.remove('active');
+      }
+    });
     // Get the grid item containing the star
     const gridItem = star.closest('.grid-item');
     if (gridItem) {
@@ -106,7 +106,7 @@ form.addEventListener("submit", function (event) {
     form.elements.genre.value,
     parseInt(form.elements.rating.value) // Retrieve the rating value and convert it to an integer
   );
-resetForm();
+  resetForm();
 })
 var podcastList = [];
 function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tags, selectedGenre, rating) {
@@ -152,7 +152,7 @@ function updatePodcastList() {
       let episodeTitle = document.createElement('h4');
       episodeTitle.textContent = podcast.episodeTitle;
 
-      
+
 
       let starsContainer = document.createElement('div');
       starsContainer.className = 'stars-container';
@@ -194,7 +194,7 @@ function updatePodcastList() {
       gridItem.appendChild(podcastName);
       gridItem.appendChild(episodeTitle);
       gridItem.appendChild(starsContainer);
-      
+
       list.appendChild(gridItem);
       gridItem.dataset.id = podcast.id;
       list.appendChild(gridItem);
@@ -306,39 +306,40 @@ const moreInfoContainer = document.getElementById('more-info-container');
 const moreInfoCloseButton = document.querySelector('.more-info-close-button');
 /*let gridItem = null;*/
 function attachEventListeners() {
-const gridItems = document.querySelectorAll('.grid-item');
-gridItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    moreInfoContainer.classList.toggle('active');
-    const podcastId = parseInt(item.dataset.id);
-    const podcast = getPodcastById(podcastId);
+  const gridItems = document.querySelectorAll('.grid-item');
+  gridItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      moreInfoContainer.classList.toggle('active');
+      const podcastId = parseInt(item.dataset.id);
+      const podcast = getPodcastById(podcastId);
 
 
-    if (podcast) {
-      gridItem = item;
-      const genreImage = document.getElementById('genre-image');
-      const genre = podcast.selectedGenre;
-      const imageSource = getGenreImageSource(genre);
-      genreImage.src = imageSource;
+      if (podcast) {
+        gridItem = item;
+        const genreImage = document.getElementById('genre-image');
+        const genre = podcast.selectedGenre;
+        const imageSource = getGenreImageSource(genre);
+        genreImage.src = imageSource;
 
-      document.getElementById('more-info-date').textContent = podcast.date;
-      document.getElementById('more-info-podcastName').textContent = podcast.podcastName;
-      document.getElementById('more-info-episodeTitle').textContent = podcast.episodeTitle;
-      document.getElementById('more-info-episodeNumber').textContent = podcast.episodeNumber;
-      document.getElementById('more-info-host').textContent = podcast.host;
-      document.getElementById('more-info-platform').textContent = podcast.platform;
-      document.getElementById('more-info-genre').textContent = podcast.selectedGenre;
-      document.getElementById('more-info-tags').textContent = podcast.tags.join(', ');;
+        document.getElementById('more-info-date').textContent = podcast.date;
+        document.getElementById('more-info-podcastName').textContent = podcast.podcastName;
+        document.getElementById('more-info-episodeTitle').textContent = podcast.episodeTitle;
+        document.getElementById('more-info-episodeNumber').textContent = podcast.episodeNumber;
+        document.getElementById('more-info-host').textContent = podcast.host;
+        document.getElementById('more-info-platform').textContent = podcast.platform;
+        document.getElementById('more-info-genre').textContent = podcast.selectedGenre;
+        document.getElementById('more-info-tags').textContent = podcast.tags.join(', ');;
 
-      const starsContainer = document.getElementById('stars-container');
-      starsContainer.innerHTML = ''; // Clear any existing stars
-      const rating = podcast.rating;
-      for (let i = 0; i < rating; i++) {
-        let starIcon = document.createElement('span');
-        starIcon.innerHTML = '&#9733;';
-        starIcon.className = 'filled-star-icon';
-        starsContainer.appendChild(starIcon);
-      }}
+        const starsContainer = document.getElementById('stars-container');
+        starsContainer.innerHTML = ''; // Clear any existing stars
+        const rating = podcast.rating;
+        for (let i = 0; i < rating; i++) {
+          let starIcon = document.createElement('span');
+          starIcon.innerHTML = '&#9733;';
+          starIcon.className = 'filled-star-icon';
+          starsContainer.appendChild(starIcon);
+        }
+      }
     });
   });
 }
