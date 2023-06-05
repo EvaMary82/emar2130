@@ -89,7 +89,6 @@
   align-items: center;
   text-align: center;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 5%;
   height: 600px;
@@ -503,10 +502,10 @@ button.previous-btn {
   z-index: 9999;
   top: 40%;
   right: 10%;
-  width: fit-content;
+  width: 400px;
   height: fit-content;
   background-color: #dfd4ff;
-  padding: 3%;
+  padding: 2%;
   border-radius: 30px;
   border: 1px solid #6f43f5;
 }
@@ -523,7 +522,7 @@ button.previous-btn {
 #refuse-delete {
   float: right;
   margin: 5%;
-  width: 115px;
+  width: 100px;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   border-radius: 5px;

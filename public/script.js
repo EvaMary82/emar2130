@@ -233,38 +233,6 @@ function getGenreImageSource(genre) {
 
   }
 }
-/*console.log(podcastList); 
-const inputs = [];
- form.querySelectorAll("input").forEach((input) => {
-   const { name, value } = input;
-   inputs.push({ name, value });
- });
- console.log(inputs)
- form.reset();
-;
- data.forEach((country) => {
-       console.log(country)
-       
-       // Container for card (Div, with a class=".")
-       
-       
-       // Title: Heading == Country Name
-       
-       
-       // Description: Paragrph == Country Information
-       
-       
-       // Image: Image == Country Flag
-       
-       
-       // Appending all content to the card
-       
-       
-       // Append the content to the page
-       
-   })
-})
-*/
 
 function changeStep(btn) {
   const activeStep = document.querySelector(".step.active");
@@ -358,6 +326,7 @@ const confirmDeleteButton = document.getElementById('confirm-delete');
 const refuseDeleteButton = document.getElementById('refuse-delete');
 trashcanIcon.addEventListener('click', function () {
   confirmationModal.style.display = "block"
+
 })
 refuseDeleteButton.addEventListener('click', function () {
   confirmationModal.style.display = 'none';
