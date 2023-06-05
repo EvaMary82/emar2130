@@ -87,23 +87,14 @@
 
 .layout-grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: fit-content;
-  /*max-width: 1512px;
- display: grid;
-  height: fit-content;
-  grid-row-gap: 2%;
-  grid-column-gap: 5%;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr;*/
   padding-top: 10%;
   padding-bottom: 5%;
   padding-left: 5%;
   padding-right: 5%;
   background-color: #dfd4ff;
-  /*overflow-y: auto;*/
 }
 
 .grid-item {
@@ -362,6 +353,17 @@ form input {
   border-radius: 15px;
   border: 1px solid #6f43f5;
 }
+select{
+  border: 1px solid #6f43f5;
+  background-color: white;
+  margin-bottom: 7.5%;
+  width: 300px;
+  height: 60px;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  padding: 2%;
+}
 
 .genre-carousel {
   display: flex;
@@ -493,7 +495,9 @@ button.previous-btn {
 #more-info-container.active {
   transform: translateX(0%);
 }
-
+.more-info .field > span:first-child {
+  font-family: 'Merriweather', serif;
+}
 .podcast-item img {
   width: 255px;
   height: 255px;
@@ -625,4 +629,9 @@ button.previous-btn {
 .tagify__tag {
   --tag-bg: #6f43f5;
   --tag-text-color: #FFF;
+}
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
 }

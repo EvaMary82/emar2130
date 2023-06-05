@@ -11,14 +11,47 @@ const closeButton = document.querySelector('.close-button');
 closeButton.addEventListener('click', () => {
   formContainer.classList.remove('active');
 });
+
 //Get all the star elements
 const stars = document.querySelectorAll('.star');
 
 // Add a click event listener to each star
-stars.forEach(star => {
+stars.forEach((star, index)  => {
   star.addEventListener('click', () => {
     // Toggle the active class on the clicked star
-    star.classList.toggle('active');
+    const rating = index + 1;
+// Toggle the active class on the stars up to the clicked star
+stars.forEach((s, i) => {
+  if (i < rating) {
+    s.classList.add('active');
+  } else {
+    s.classList.remove('active');
+  }
+});
+    // Get the grid item containing the star
+    const gridItem = star.closest('.grid-item');
+    if (gridItem) {
+      // Get the podcast ID from the grid item's data attribute
+      const podcastId = parseInt(gridItem.dataset.id);
+      const podcast = getPodcastById(podcastId);
+
+      // Update the podcast's rating based on the clicked stars
+      const clickedStars = gridItem.querySelectorAll('.filled-star-icon.active');
+      const rating = clickedStars.length;
+      podcast.rating = rating;
+
+      // Save the updated podcast back to localStorage or update the database
+
+      // Update the grid item's stars display
+      const gridItemStars = gridItem.querySelectorAll('.filled-star-icon');
+      gridItemStars.forEach((item, index) => {
+        if (index < rating) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
   });
 });
 const steps = Array.from(document.querySelectorAll("form .step"));
@@ -42,6 +75,22 @@ const tagsInput = document.getElementById('tags');
 
 // Initialize Tagify on the input element
 const tagify = new Tagify(tagsInput);
+// Function to reset the form and go back to the first step
+function resetForm() {
+  // Clear the star rating inputs within the fieldset
+  const ratingFieldset = document.getElementById('ratingFieldset');
+  const ratingInputs = ratingFieldset.querySelectorAll('input[type="radio"]');
+  ratingInputs.forEach(input => {
+    input.checked = false;
+  });
+
+  // Clear the star rating display
+  const starIcons = document.querySelectorAll('.star-rating .star');
+  starIcons.forEach(icon => icon.classList.remove('active'));
+
+  // Reset the rest of the form fields
+  form.reset();
+}
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();//block default submission behaviour 
@@ -55,9 +104,9 @@ form.addEventListener("submit", function (event) {
     form.elements.host.value,
     tagsArray,
     form.elements.genre.value,
-    form.elements.rating.value
+    parseInt(form.elements.rating.value) // Retrieve the rating value and convert it to an integer
   );
-  form.reset();
+resetForm();
 })
 var podcastList = [];
 function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tags, selectedGenre, rating) {
@@ -71,7 +120,7 @@ function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, ta
     selectedGenre,
     rating,
     id: Date.now(),
-    date: new Date().toISOString(),
+    date: new Date().toLocaleDateString(), // Format the date using toLocaleDateString()
   };
   podcastList.push(podcast);
   localStorage.setItem('podcasts', JSON.stringify(podcastList));
@@ -103,6 +152,8 @@ function updatePodcastList() {
       let episodeTitle = document.createElement('h4');
       episodeTitle.textContent = podcast.episodeTitle;
 
+      
+
       let starsContainer = document.createElement('div');
       starsContainer.className = 'stars-container';
 
@@ -110,15 +161,40 @@ function updatePodcastList() {
         let starIcon = document.createElement('span');
         starIcon.innerHTML = '&#9733;';
         starIcon.className = 'filled-star-icon';
+        starIcon.dataset.rating = i + 1;
         starsContainer.appendChild(starIcon);
       }
-      
+
+      // Add a click event listener to each star
+      let stars = starsContainer.querySelectorAll('.filled-star-icon');
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          const gridItem = star.closest('.grid-item');
+          if (gridItem) {
+            const podcastId = parseInt(gridItem.dataset.id);
+            const podcast = getPodcastById(podcastId);
+
+            const rating = parseInt(star.dataset.rating);
+            podcast.rating = rating;
+
+            const gridItemStars = gridItem.querySelectorAll('.filled-star-icon');
+            gridItemStars.forEach(item => {
+              const itemRating = parseInt(item.dataset.rating);
+              if (itemRating <= rating) {
+                item.classList.add('active');
+              } else {
+                item.classList.remove('active');
+              }
+            });
+          }
+        });
+      });
 
       gridItem.appendChild(image);
       gridItem.appendChild(podcastName);
       gridItem.appendChild(episodeTitle);
       gridItem.appendChild(starsContainer);
-
+      
       list.appendChild(gridItem);
       gridItem.dataset.id = podcast.id;
       list.appendChild(gridItem);
@@ -252,7 +328,7 @@ gridItems.forEach((item) => {
       document.getElementById('more-info-host').textContent = podcast.host;
       document.getElementById('more-info-platform').textContent = podcast.platform;
       document.getElementById('more-info-genre').textContent = podcast.selectedGenre;
-      document.getElementById('more-info-tags').textContent = podcast.tag;
+      document.getElementById('more-info-tags').textContent = podcast.tags.join(', ');;
 
       const starsContainer = document.getElementById('stars-container');
       starsContainer.innerHTML = ''; // Clear any existing stars
