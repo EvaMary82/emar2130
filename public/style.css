@@ -514,7 +514,7 @@ button.previous-btn {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   align-items: center;
- /* white-space: nowrap;*/
+  /* white-space: nowrap;*/
 
 }
 
@@ -577,6 +577,7 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
 @media screen and (max-width: 390px) {
   /* CSS rules for mobile devices with a minimum width of 390px */
   /* Target and modify the necessary elements here */
@@ -585,16 +586,18 @@ fieldset {
     max-width: 253px;
     height: auto;
   }
+
   .header-text {
     font-size: 20px;
     margin: 17%;
   }
+
   .button-primary {
     padding: 5px 8px;
-   max-width: 72px;
+    max-width: 72px;
     font-size: 12px;
     border-radius: 7px;
- 
+
   }
 
   .close-button {
@@ -608,7 +611,7 @@ fieldset {
     border-radius: 30px;
     cursor: pointer;
   }
-  
+
   .more-info-close-button {
     position: absolute;
     top: 5%;
@@ -618,12 +621,13 @@ fieldset {
     font-size: 22px;
     border: 1px solid #6f43f5;
   }
+
   form label {
     font-size: 16px;
     margin-bottom: 25%;
     margin-top: 40%;
   }
-  
+
   form input {
     margin-bottom: 40%;
     width: 174px;
@@ -631,27 +635,29 @@ fieldset {
     border-radius: 8px;
 
   }
-  
+
   select {
     width: 174px;
     height: 29px;
     border-radius: 5px;
     font-size: 12px;
   }
- 
-  
+
+
   .genre-item {
     margin-bottom: 6%;
     margin-top: -30px;
   }
-  
+
   .genre-item img {
     width: 107px;
     height: 107px;
   }
+
   .genre-name {
-  font-size: 14px;
+    font-size: 14px;
   }
+
   /*this refres to the stars inside the form*/
   .star {
     font-size: 30px;
@@ -663,25 +669,25 @@ fieldset {
     font-size: 12px;
     margin: 10px;
   }
-  
+
   button.next-btn,
   button.submit-btn {
     height: 29px;
     border-radius: 5px;
   }
-  
+
   button.previous-btn {
     height: 29px;
     border-radius: 5px;
   }
- 
+
   .podcast-item img {
     width: 100px;
     height: 100px;
     border-radius: 15px;
     margin-top: 25px;
   }
-  
+
   .more-info {
     display: flex;
     flex-direction: column;
@@ -689,28 +695,30 @@ fieldset {
     margin-top: 180px;
     margin-left: 5px;
     color: #6f43f5;
-  
+
   }
-  
+
   .field {
     display: flex;
     flex-direction: column;
-  margin-bottom: 25px;
+    margin-bottom: 25px;
   }
+
   .more-info .field span:first-child {
     margin-bottom: 8px;
   }
+
   .podcast-item {
     float: left;
     margin-right: 20px;
   }
-  
+
   #trashcan-icon {
-    height:28px;
+    height: 28px;
     bottom: 5%;
     right: 6%;
   }
-  
+
   .modal {
     right: 2.5%;
     width: 192px;
@@ -719,12 +727,12 @@ fieldset {
     padding: 3%;
     border-radius: 15px;
   }
-  
+
   .modal p {
     font-size: 12px;
     word-wrap: break-word;
   }
-  
+
   #confirm-delete,
   #refuse-delete {
     margin: 2%;
@@ -733,7 +741,7 @@ fieldset {
     border-radius: 5px;
     padding: 2%;
   }
-  
+
   .tagify {
     padding: 0;
     line-height: 29px;
@@ -743,48 +751,49 @@ fieldset {
     margin-bottom: 40%;
     font-size: 12px;
   }
-  
+
   .tagify__tag {
     --tag-bg: #6f43f5;
     --tag-text-color: #FFF;
     margin-top: -2px;
   }
-  
+
   .grid-item {
     height: 250px;
   }
-  
+
   .filled-star-icon {
     font-size: 20px;
   }
-  
+
   .layout-grid img {
     max-width: 148px;
   }
-  
+
   .layout-grid h3 {
     font-size: 14px;
   }
-  
+
   .layout-grid h4 {
     font-size: 12px;
-     }
-  
+  }
+
   .footer-image img {
     max-width: 157px;
     height: auto;
   }
-  
+
   .footer-text {
     font-size: 20px;
   }
-  
+
   .button-secondary {
 
     padding: 5px 8px;
     max-width: 72px;
-     font-size: 12px;
-     border-radius: 7px;
+    font-size: 12px;
+    border-radius: 7px;
   }
+
   /* Other CSS rules for mobile adaptation */
 }
