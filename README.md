@@ -87,18 +87,22 @@ https://www.w3schools.com/tags/tag_select.asp (dropdown menu)
 chat gpt (genre picker and star rating pattern)
 
 ![original design ](public/images/genre%20picker%3A%20star%20rating%203.png)
+
 Dynamically generate star icons
 
 ![original design ](public/images/Genre%20picker%20and%20star%20rating%20pattern.png) 
 changing pattern to have genre picker and star rating instead of text input
 
 ![original design ](public/images/Genre%20picker%20backend.png )
+
 Genre picker to correspond to a text input and store into local storage
 
 ![original design ](public/images/genre%20picker%3A%20star%20rating%201.png )
+
 Displaying stars corresponding to user input
 
 ![original design ](public/images/js%20for%20star%20rating.png)
+
 Javascript to fill in colour up to clicked star
 
 ![original design ](public/images/Star%20rating%20backend.png )
