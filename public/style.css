@@ -39,9 +39,9 @@
   font-size: 64px;
   /*margin-left: 17%;*/
   margin: 17%;
-  /*did this styling so that the button styles accordingly because previously the margin-top property was not applying to the primary button class because of conflicting styles because the class sists inside the header text div*/
+  /*did this styling so that the button styles accordingly because previously the margin-top property was not applying to the primary button class because of conflicting styles because the class sits inside the header text div*/
 }
-
+/* this is styling for button contained within the the hero scetion*/
 .button-primary {
   color: #6f43f5;
   letter-spacing: 2px;
@@ -50,7 +50,6 @@
   font-family: 'Poppins', sans-serif;
   font-size: 40px;
   border-radius: 10px;
-  /*line-height: 20px;*/
   transition: all .2s;
   margin-left: 17%;
   z-index: 1;
@@ -68,9 +67,10 @@
 .shadow-two {
   box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
 }
-
+  /*initially had a overflow y property applied but tutor suggested that i can use a flex layout instaed of a grid layout to get rid of unneccessary scrolling that was hindering user experience*/
 .layout-grid {
   display: flex;
+  /*initially used  a justify content-space between property but when i had less that 4 grid inputs my grid was becoming compressed with white space to the left. Chat gpt suggested that a space-around property can ensure that that the grid always takes up all remaining space*/
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -83,7 +83,7 @@
 
 .grid-item {
   flex: 0 0 calc(33.33% - 5%);
-  /*lex item should not grow or shrink, and it should have a fixed width based on the specified calculation. This allows you to have a consistent width for each grid item while still maintaining a responsive layout*/
+  /*flex item should not grow or shrink, and it should have a fixed width based on the specified calculation. This allows you to have a consistent width for each grid item while still maintaining a responsive layout*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,9 +91,10 @@
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 5%;
+  /* apply a fixed height for the grid item so that all podcast items can be evenly styled*/
   height: 600px;
 }
-
+/* grid item styled after consult with tutor. proposed a way that i can apply a flex grow property to the episode title so that even if it is long or short it takes up remianining space and the stars container can be at fixed height*/
 .grid-item h4 {
   flex-grow: 1;
   margin: 0;
@@ -103,9 +104,7 @@
 
 .filled-star-icon {
   font-size: 50px;
-  /* Set the desired size */
   color: #6f43f5;
-  /* Set the desired color */
 }
 
 .grid-item .stars-container {
@@ -113,41 +112,29 @@
   align-items: center;
   justify-content: center;
 }
-
-.grid-item .stars-container img {
-  margin: 0 2px;
-  /* Adjust the spacing between the star icons */
-}
-
 .layout-grid img {
   max-width: 390px;
 }
-
 .layout-grid h3 {
   font-size: 30px;
   margin-top: 5%;
-
 }
 
 .layout-grid h4 {
-
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   margin-bottom: 10%;
-  /*does not work because some podcast is 2 lines and the stars do not appera in line*/
+  /*does not work because some podcast is 2 lines and the stars do not appear in line*/
 }
-
+/* this text decoration is for my "add title" button elements*/
 a {
   text-decoration: underline;
 }
-
 
 .body {
   padding-left: 0;
   padding-right: 0;
 }
-
-
 
 .footer-section {
   background-color: #6f43f5;
@@ -191,7 +178,6 @@ a {
   /* to ensure no line breaks in the text content*/
   font-family: Merriweather, serif;
   color: #fffdfd;
-  /*flex: 0;*/
   font-size: 64px;
   font-weight: 100;
   margin-top: 20%;
@@ -220,12 +206,9 @@ a {
 .button- .button-secondary {
   background-color: #43464d;
 }
-
-/*.shadow-two {
-  box-shadow: 0 4px 24px rgba(150, 163, 181, .08);
-}*/
 #form-container {
   position: fixed;
+  /* used position fixed to ensure that teh container is docked to the right of my screen and top 0 right 0 to achieve designerd fixed window such that i can still scroll through the background grid items*/
   top: 0;
   right: 0;
   width: 50%;
@@ -238,18 +221,13 @@ a {
   border-top-left-radius: 30px;
   transition: right 0.3s ease-in-out;
   transform: translateX(100%);
+  /* translate property is applied to get the form to look like it is sliding out - used chatgpt to get this working*/
 }
 
 #form-container.active {
   transform: translateX(0%);
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  border: 2px solid #6f43f5;
-}
 
 .close-button {
   position: absolute;
@@ -263,6 +241,7 @@ a {
   border-radius: 30px;
   color: #6f43f5;
   cursor: pointer;
+  /*cursor pointer is used to make elements clickable*/
 }
 
 .close-button:hover {
@@ -293,7 +272,7 @@ form label {
   font-size: 24px;
   margin-bottom: 5%;
 }
-
+/* styling of input fields boxes for all those with text inputs*/
 form input {
   display: block;
   margin-bottom: 7.5%;
@@ -302,7 +281,7 @@ form input {
   border-radius: 15px;
   border: 1px solid #6f43f5;
 }
-
+/* styling for the dropdown menu similar to the input fields however adjusted to accommodate */
 select {
   border: 1px solid #6f43f5;
   background-color: white;
@@ -317,11 +296,12 @@ select {
 
 .genre-carousel {
   display: flex;
+  /* overflow property is introduced so that i can make a scrollable carousel */
   flex-wrap: nowrap;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
 }
-
+/*each icon and its attached text propery is an item and styled accordingly*/
 .genre-item {
   display: flex;
   flex-direction: column;
@@ -332,19 +312,17 @@ select {
   cursor: pointer;
   margin-bottom: 5%;
 }
-
+/* styling for the gener icons*/
 .genre-item img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
   cursor: pointer;
-  border: 3px solid transparent;
-  /* Add a transparent border initially */
   transition: border-color 0.3s ease;
   /* Add a transition for smooth animation */
   margin-bottom: 10%;
 }
-
+/* styling for the purple ring that appears on hover*/
 .genre-item img:hover,
 .genre-item img.active {
   border-color: #6f43f5;
@@ -369,7 +347,6 @@ select {
 
 .star-rating {
   display: flex;
-  /* Use flexbox */
   align-items: center;
   /* Align items vertically in the center */
   margin-bottom: 4.2%;
@@ -389,7 +366,7 @@ select {
 .star.active {
   color: #6f43f5;
 }
-
+/* this is the multi-step form pattern that toggles between an active /none display to show contents of the current page user is on*/
 .step {
   display: none;
 }
@@ -397,7 +374,7 @@ select {
 .step.active {
   display: block;
 }
-
+/* styling for button cantained within form*/
 .button-text {
   font-family: 'Poppins', sans-serif;
   font-size: 30px;
@@ -423,10 +400,7 @@ button.previous-btn {
   border: 1px solid #6f43f5;
   color: #6f43f5;
 }
-
-/*.hidden{
-  display: none;
-}*/
+/* styling for extended view window . Similar logic used to get slide in effect through translate property*/
 #more-info-container {
   position: fixed;
   top: 0;
@@ -445,7 +419,7 @@ button.previous-btn {
 #more-info-container.active {
   transform: translateX(0%);
 }
-
+/* this is used to target all the top level span elements . I troied to use bold but realised that for that i will need to import the bold font from google and decided to give it a complmentary font to diffrenciate between teh two*/
 .more-info .field>span:first-child {
   font-family: 'Merriweather', serif;
 }
@@ -469,12 +443,12 @@ button.previous-btn {
 
 .field {
   margin-bottom: 10%;
+  /* adjust the space between each field*/
 }
 
 .podcast-item {
   float: left;
   margin-right: 20px;
-  /* Adjust the margin as needed */
 }
 
 #trashcan-icon {
@@ -485,7 +459,7 @@ button.previous-btn {
   cursor: pointer;
 
 }
-
+/* this is the styling for the stars that is contained in the extended view window */
 .stars-container {
   display: flex;
   justify-content: center;
@@ -495,11 +469,12 @@ button.previous-btn {
   color: #6f43f5;
   font-size: 50px;
 }
-
+/* styling for the delet confirmation pop-up modal*/
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
+  /*use the z-index property to have the modal sit on top of the existing content*/
   top: 40%;
   right: 10%;
   width: 400px;
@@ -514,7 +489,7 @@ button.previous-btn {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   align-items: center;
-  /* white-space: nowrap;*/
+  /* white-space: nowrap; - initially used as i wanted it all in 1 line but this interfered with my styling for my mobile view */
 
 }
 
@@ -541,7 +516,7 @@ button.previous-btn {
   color: #6f43f5;
   border: 1px solid #6f43f5;
 }
-
+/* this styling is taken from the my dev tools  which is from the canvas instructions pdf and the added library and adjusted accordingly to achieve the aesthetic i wanted*/
 
 .tagify {
   display: inline-flex;
@@ -580,8 +555,7 @@ fieldset {
 
 @media screen and (max-width: 390px) {
   /* CSS rules for mobile devices with a minimum width of 390px */
-  /* Target and modify the necessary elements here */
-
+/* changed the size hero image , font size of header text and button text and size of button*/
   .hero-image img {
     max-width: 253px;
     height: auto;
@@ -599,7 +573,7 @@ fieldset {
     border-radius: 7px;
 
   }
-
+/* changed size of close button on form window and extended view pop-up*/
   .close-button {
     position: absolute;
     top: 5%;
@@ -607,6 +581,7 @@ fieldset {
     width: 30px;
     height: 30px;
     font-size: 22px;
+    /* adjusted to look more consistent on small screen*/
     border: 1px solid #6f43f5;
     border-radius: 30px;
     cursor: pointer;
@@ -621,7 +596,7 @@ fieldset {
     font-size: 22px;
     border: 1px solid #6f43f5;
   }
-
+/* styling for form input and label fields*/
   form label {
     font-size: 16px;
     margin-bottom: 25%;
@@ -635,7 +610,7 @@ fieldset {
     border-radius: 8px;
 
   }
-
+/* styling for dropdown menu on mobile veiw*/
   select {
     width: 174px;
     height: 29px;
@@ -643,7 +618,7 @@ fieldset {
     font-size: 12px;
   }
 
-
+/* styling for genre picker carousel contained within form*/
   .genre-item {
     margin-bottom: 6%;
     margin-top: -30px;
@@ -664,7 +639,7 @@ fieldset {
     margin-right: 10px;
     margin-top: 10%;
   }
-
+/* styling for next and back buttons contained within form*/
   .button-text {
     font-size: 12px;
     margin: 10px;
@@ -680,14 +655,14 @@ fieldset {
     height: 29px;
     border-radius: 5px;
   }
-
+/* image of genre inside the extyended view slide in*/
   .podcast-item img {
     width: 100px;
     height: 100px;
     border-radius: 15px;
     margin-top: 25px;
   }
-
+/* styling for elements within teh extended view slide-out window */
   .more-info {
     display: flex;
     flex-direction: column;
@@ -702,6 +677,7 @@ fieldset {
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
+    /* margins are all adjusted as mobile view has a much longer screen size*/
   }
 
   .more-info .field span:first-child {
@@ -718,7 +694,7 @@ fieldset {
     bottom: 5%;
     right: 6%;
   }
-
+/* styling for the delete confirmation pop-up modal*/
   .modal {
     right: 2.5%;
     width: 192px;
@@ -741,7 +717,7 @@ fieldset {
     border-radius: 5px;
     padding: 2%;
   }
-
+/*styling for the tag input field*/
   .tagify {
     padding: 0;
     line-height: 29px;
@@ -757,7 +733,7 @@ fieldset {
     --tag-text-color: #FFF;
     margin-top: -2px;
   }
-
+/*styling for the grid items in the body section - dimensions follow closely with my hi fidelity mockups*/
   .grid-item {
     height: 250px;
   }
@@ -795,5 +771,4 @@ fieldset {
     border-radius: 7px;
   }
 
-  /* Other CSS rules for mobile adaptation */
 }

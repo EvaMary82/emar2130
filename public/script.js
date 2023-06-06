@@ -1,18 +1,21 @@
+// used this method based off a conversation thread on piazza because though my image path was correct the images were not loading . i followed teh instruction posted by a tutor 
 import images from './images/podcast (philosophy).png';
 console.log(images)
+//JS to handle the slide out form which works by making the form change to 'active status' which then activated the transaltion applied in css file
 const addTitleButton = document.querySelector('.button-primary');
 const formContainer = document.getElementById('form-container');
 
 addTitleButton.addEventListener('click', function () {
   formContainer.classList.toggle('active');
 });
+//close button does the opposite by changing status back to inactive and getting teh window to slid out 
 const closeButton = document.querySelector('.close-button');
-
 closeButton.addEventListener('click', () => {
   formContainer.classList.remove('active');
 });
 
-//Get all the star elements
+// JS to handle the star rating on the form where the stars fill in up to the clicked star. 
+//payttern derived from Chatgpt
 const stars = document.querySelectorAll('.star');
 
 // Add a click event listener to each star
@@ -40,8 +43,6 @@ stars.forEach((star, index) => {
       const rating = clickedStars.length;
       podcast.rating = rating;
 
-      // Save the updated podcast back to localStorage or update the database
-
       // Update the grid item's stars display
       const gridItemStars = gridItem.querySelectorAll('.filled-star-icon');
       gridItemStars.forEach((item, index) => {
@@ -54,11 +55,11 @@ stars.forEach((star, index) => {
     }
   });
 });
+//JS to handle the multistep form pattern. This is derived from codepen. refer to HTML file/readme to view refrence
 const steps = Array.from(document.querySelectorAll("form .step"));
 const nextBtn = document.querySelectorAll("form .next-btn");
 const prevBtn = document.querySelectorAll("form .previous-btn");
 const form = document.querySelector("form");
-// Function to reset the form and go back to the first step
 
 nextBtn.forEach((button) => {
   button.addEventListener("click", () => {
@@ -70,12 +71,14 @@ prevBtn.forEach((button) => {
     changeStep("prev");
   });
 });
+//tagify pattern is derived from canvas 
 // Retrieve the tags input element
 const tagsInput = document.getElementById('tags');
 
 // Initialize Tagify on the input element
 const tagify = new Tagify(tagsInput);
 // Function to reset the form and go back to the first step
+//initializing function to get the form to clear once user has submiited. Function is later called in the submit eventlistener
 function resetForm() {
   // Clear the star rating inputs within the fieldset
   const ratingFieldset = document.getElementById('ratingFieldset');
@@ -84,18 +87,19 @@ function resetForm() {
     input.checked = false;
   });
 
-  // Clear the star rating display
+  // Clear the star rating display required extra lines as initially the rating remained
   const starIcons = document.querySelectorAll('.star-rating .star');
   starIcons.forEach(icon => icon.classList.remove('active'));
 
   // Reset the rest of the form fields
   form.reset();
 }
-
+// JS that handles the form submission 
 form.addEventListener("submit", function (event) {
   event.preventDefault();//block default submission behaviour 
   const tagsArray = tagify.value.map((tag) => tag.value);
   console.log(form.elements.podcastName.value)
+  //only used for testing podcast is actually being added in the below addpodcast function 
   addPodcast(
     form.elements.podcastName.value,
     form.elements.episodeTitle.value,
@@ -108,6 +112,7 @@ form.addEventListener("submit", function (event) {
   );
   resetForm();
 })
+// an empty array is created to contain my podcast objects this follows closely with the patterns from the task tracker application developed during tutorials 
 var podcastList = [];
 function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, tags, selectedGenre, rating) {
   let podcast = {
@@ -122,6 +127,7 @@ function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, ta
     id: Date.now(),
     date: new Date().toLocaleDateString(), // Format the date using toLocaleDateString()
   };
+  // object is created and then pushed into empty array. contained in local storage (this follows the countries API pattern)
   podcastList.push(podcast);
   localStorage.setItem('podcasts', JSON.stringify(podcastList));
   updatePodcastList();
@@ -129,19 +135,20 @@ function addPodcast(podcastName, episodeTitle, episodeNumber, platform, host, ta
 if (localStorage.getItem('podcasts')) {
   podcastList = JSON.parse(localStorage.getItem('podcasts'));
 }
+//update function is used to retain previously added objects and 'add on' to teh existing list
 function updatePodcastList() {
   let list = document.querySelector(".layout-grid");
   list.innerHTML = "";
 
   let podcastList = JSON.parse(localStorage.getItem('podcasts'));
   console.log(podcastList);
-
   if (podcastList !== null) {
+    //dynamically creating grid items 
     podcastList.forEach((podcast) => {
       let gridItem = document.createElement('div');
       gridItem.className = 'grid-item';
 
-
+// JS that handels assigning items a genre value and returning an image depending on that 
       let image = document.createElement('img');
       image.src = getGenreImageSource(podcast.selectedGenre);
       image.alt = 'podcast-image(' + podcast.selectedGenre + ')';
@@ -156,7 +163,7 @@ function updatePodcastList() {
 
       let starsContainer = document.createElement('div');
       starsContainer.className = 'stars-container';
-
+// pattern derived from chatgpt to allow for stars that is being returned in teh grid item to be equal to teh ones that is eing clicked to fill in 
       for (let i = 0; i < podcast.rating; i++) {
         let starIcon = document.createElement('span');
         starIcon.innerHTML = '&#9733;';
@@ -189,7 +196,7 @@ function updatePodcastList() {
           }
         });
       });
-
+// append all items to list  so that it shows up on teh grid item 
       gridItem.appendChild(image);
       gridItem.appendChild(podcastName);
       gridItem.appendChild(episodeTitle);
@@ -212,6 +219,7 @@ if (localStorage.getItem('podcasts')) {
   podcastList = JSON.parse(localStorage.getItem('podcasts'));
   updatePodcastList();
 }
+//switch case to return an assigned value depending on what otem has been clicked
 function getGenreImageSource(genre) {
   switch (genre) {
     case 'philosophy':
@@ -233,7 +241,7 @@ function getGenreImageSource(genre) {
 
   }
 }
-
+// JS that is handling the multi-step form pattern
 function changeStep(btn) {
   const activeStep = document.querySelector(".step.active");
   const activeIndex = steps.indexOf(activeStep);
@@ -252,7 +260,7 @@ function changeStep(btn) {
   }
 }
 const genreItems = document.querySelectorAll('.genre-item');
-
+// JS that is triggering the extende view slide-out window when clicked 
 genreItems.forEach((item) => {
   const image = item.querySelector('img');
 
@@ -266,13 +274,13 @@ genreItems.forEach((item) => {
     image.classList.add('active');
   });
 });
+// ataching an id to podcast so that it can be retrioeved to display information about the clicked item in the extended view
 function getPodcastById(podcastId) {
   return podcastList.find((podcast) => podcast.id === parseInt(podcastId));
 }
-
+// JS that is handling the display of user input on the extende view page 
 const moreInfoContainer = document.getElementById('more-info-container');
 const moreInfoCloseButton = document.querySelector('.more-info-close-button');
-/*let gridItem = null;*/
 function attachEventListeners() {
   const gridItems = document.querySelectorAll('.grid-item');
   gridItems.forEach((item) => {
@@ -296,7 +304,7 @@ function attachEventListeners() {
         document.getElementById('more-info-host').textContent = podcast.host;
         document.getElementById('more-info-platform').textContent = podcast.platform;
         document.getElementById('more-info-genre').textContent = podcast.selectedGenre;
-        document.getElementById('more-info-tags').textContent = podcast.tags.join(', ');;
+        document.getElementById('more-info-tags').textContent = podcast.tags.join(', ');;// Chatgpt suggestion that allows for the display of multiple tags but joining the inputs 
 
         const starsContainer = document.getElementById('stars-container');
         starsContainer.innerHTML = ''; // Clear any existing stars
@@ -311,15 +319,11 @@ function attachEventListeners() {
     });
   });
 }
-
-/*function getPodcastById(podcastId) {
-  const foundPodcast = podcastList.find((podcast) => podcast.id === podcastId);
-  console.log('Found podcast:', foundPodcast);
-  return foundPodcast;
-}*/
+// similar logic pattern used get the extended view to slide out 
 moreInfoCloseButton.addEventListener('click', () => {
   moreInfoContainer.classList.remove('active');
 });
+// JS to handle delete confirmation window 
 const trashcanIcon = document.getElementById('trashcan-icon');
 const confirmationModal = document.getElementById('confirmation-modal');
 const confirmDeleteButton = document.getElementById('confirm-delete');
@@ -344,7 +348,7 @@ confirmDeleteButton.addEventListener('click', function () {
     updatePodcastList();
   }
 });
-
+// function to handle delete 
 function deletePodcast(podcastId) {
   // Get the existing podcast list from local storage
   let podcastList = JSON.parse(localStorage.getItem('podcasts'));
@@ -360,34 +364,7 @@ function deletePodcast(podcastId) {
     localStorage.setItem('podcasts', JSON.stringify(podcastList));
   }
 }
-/*confirmDeleteButton.addEventListener('click', function(){
-  const activePodcast = document.querySelector('.grid-item.active');
-if (activePodcast) {
-  const podcastId = activePodcast.dataset.id;
-  deletePodcast(podcastId);
-  confirmationModal.style.display = 'none';
-}
-})
 
-function deletePodcast(podcastId){
-  let podcastList = getPodcastItemsFromStorage();
-  podcastList = podcastList.filter((podcast) => podcast.id !== podcastId);
-  savePodcastItemsToStorage(podcastList);
-  removePodcastItemFromGrid()
-
-  const podcastItems = getPodcastItemFromStorage();
-  const index = podcastItems.findIndex(item => item.id === podcastId);
-  if (index !== -1){
-    podcastItems.splice(index,1);
-    savePodcastItemsToStorage(podcastItems);
-    removePodcastItemsFromGrid(podcastId);
-  }
-  function removePodcastItemFromGrid(podcastId){
-    const gridItem = document.querySelector('.grid-tem[data-id"${podcastId}"]');
-    if (gridItem);
-    gridItem.remove();
-  }
-}*/
 function getPodcastItemsFromStorage() {
   let podcastList = localStorage.getItem('podcast');
   if (podcastList) {
