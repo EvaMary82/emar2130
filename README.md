@@ -77,9 +77,13 @@ Additionally, some design elements had to be adjusted to accommodate the project
 ## Installation
 ## Credits 
 I used the following resources for my code 
+
 https://www.freecodecamp.org/news/html-symbols-html-icon-and-entity-code-list/ (symbols)
+
 https://codepen.io/Web_Cifar/pen/PoNNEYY (multi-step form)
+
 https://www.w3schools.com/tags/tag_select.asp (dropdown menu)
+
 chat gpt (genre picker and star rating pattern)
 ![original design ](public/images/Star%20rating%20backend.png )Original design (progress bar)
 ![original design ](public/images/Genre%20picker%20backend.png )Original design (progress bar)
