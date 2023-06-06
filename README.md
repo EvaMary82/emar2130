@@ -85,10 +85,19 @@ https://codepen.io/Web_Cifar/pen/PoNNEYY (multi-step form)
 https://www.w3schools.com/tags/tag_select.asp (dropdown menu)
 
 chat gpt (genre picker and star rating pattern)
-![original design ](public/images/Star%20rating%20backend.png )Original design (progress bar)
-![original design ](public/images/Genre%20picker%20backend.png )Original design (progress bar)
-![original design ](public/images/Genre%20picker%20and%20star%20rating%20pattern.png) Original design (progress bar)
-![original design ](public/images/genre%20picker%3A%20star%20rating%201.png )Original design (progress bar)
+
 ![original design ](public/images/genre%20picker%3A%20star%20rating%203.png)Original design (progress bar)
-![original design ](public/images/Slide%20in%20effect%20styling.png)Original design (progress bar)
+
+![original design ](public/images/Genre%20picker%20and%20star%20rating%20pattern.png) Original design (progress bar)
+
+![original design ](public/images/Genre%20picker%20backend.png )Original design (progress bar)
+
+![original design ](public/images/genre%20picker%3A%20star%20rating%201.png )Original design (progress bar)
+
 ![original design ](public/images/js%20for%20star%20rating.png)Original design (progress bar)
+
+![original design ](public/images/Star%20rating%20backend.png )Original design (progress bar)
+
+![original design ](public/images/Slide%20in%20effect%20styling.png)Original design (progress bar)
+
+
