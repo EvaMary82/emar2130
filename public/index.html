@@ -4,11 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Task List</title>
+  <title>Podcast Tracker</title>
+  <!--Importing fonts from google fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@300&display=swap"
     rel="stylesheet">
+  <!-- Following canvas modules week 13 Tagify instructios pdf adding of required libraries-->
   <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
@@ -23,13 +25,15 @@
       <h1 class="header-text">Track your podcast addiction!</h1>
       <a href="#" class="button-primary"> Add Title </a>
     </div>
+    <!-- denoting all form elements to be in an aside container so that 1. i get the elements to sit on top of my hero section and 2. the use of aisde is more semantic HTML than div for my project as my form is a slide-out window docked to the right of the screen-->
     <aside id="form-container">
-
+<!-- used https://www.freecodecamp.org/news/html-symbols-html-icon-and-entity-code-list/ to look up symbols for "cross button"-->
       <button class="close-button">&times;</button>
 
       <div class="container">
         <form>
-
+<!-- Used the following resource https://codepen.io/Web_Cifar/pen/PoNNEYY to get the multi-step form pattern. Code is altered as i have other types of input like radio inputs, dropdown boxes and tags-->
+<!-- First page of the multi-step form -->
           <div class="step step-1 active">
             <div class="form-group">
               <label for="podcastName">Podcast Name :</label>
@@ -47,9 +51,10 @@
               <span class="button-text">Next</span>
             </button>
           </div>
-
+          <!-- Second page of the multi-step form -->
           <div class="step step-2">
             <div class="form-group">
+              <!-- Used Chat gpt to figure out the pattern for a clickable image carousel for genre picker (refer to readme file for screenshots)-->
               <label for="genre">Genre :</label>
               <input type="hidden" id="genre" name="genre">
               <div class="genre-carousel">
@@ -104,6 +109,7 @@
                 </div>
               </div>
             </div>
+            <!-- Used Chat Gpt to figure out pattern for star rating (refer to readme file for screenshots)-->
             <div class="form-group">
               <fieldset id="ratingFieldset">
                 <label for="rating">Rating :</label>
@@ -128,9 +134,10 @@
               <span class="button-text">Next</span>
             </button>
           </div>
-
+           <!-- Third page of the multi-step form -->
           <div class="step step-3">
             <div class="form-group">
+              <!-- Used the following resource for code pattern for a dropdown menu ouh-->
               <label for="platform">Platform :</label>
               <select id="platform" name="platform" required="true">
                 <option value="">Select a platform</option>
@@ -156,6 +163,7 @@
               <label for="host">Host :</label>
               <input type="text" id="host" name="host" required="true">
             </div>
+            <!-- tags code pattern followed according to canvas instruction-->
             <div class="form-group">
               <label for="tags">Tag :</label>
               <input type="text" id="tags" name="tags" value="#fav">
@@ -174,13 +182,16 @@
 
     <div class="hero-image"> <img src="images/hero-image.png"></div>
   </section>
+  <!-- Initially created a grid with all elements as a prototype so that i could apply all necessary CSS styling. This section was then removed after writing the JS to dynamically created teh grid items-->
   <section class="layout-grid">
 
 
     </div>
   </section>
+  <!--Extended View slide out window-->
   <aside id="more-info-container">
     <div class="podcast-item">
+      <!-- contains dummy data so that i can dynamically "fill in the fields"-->
       <div class="more-info-image">
         <img id="genre-image" src="images/podcast (default).png">
       </div>
@@ -224,6 +235,8 @@
     <button class="more-info-close-button">&times;</button>
     <img src="images/trash_icon.png" alt="trashcan-icon" id="trashcan-icon">
   </aside>
+  <!-- Delete confirmation pop-up modal-->
+  <!-- created a div such that does not interact with the rest of the elements on my tracker-->
   <section id="confirmation-modal" class="modal">
     <div class="modal-content">
       <p>Are you sure you want to delete this item?</p>
@@ -231,10 +244,12 @@
       <button id="refuse-delete">No</button>
     </div>
   </section>
+  <!-- Footer section-->
   <section class="footer-section">
     <div class="footer-image"> <img src="images/footer-image.png"></div>
     <div class="footer-text-content">
       <h2 class="footer-text">Tracking made easy</h2>
+      <!-- Button is clickable , however there is no functionality so that I could reduce teh scope of my project-->
       <a href="#" class="button-secondary"> Add Title </a>
     </div>
   </section>
