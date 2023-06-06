@@ -75,6 +75,17 @@ Additionally, some design elements had to be adjusted to accommodate the project
 ![final design](public/images/Final%20design%20(purple%20text).png )Final design (purple text)
 
 ## Installation
+
+To install and run this project follow the steps as laid out 
+
+1.	Clone the repository using the command : git clone https:// https://github.com/EvaMary82/emar2130-tracker
+
+2.	Install dependencies. Node js using this command – npm install
+
+3.	Start server by running the command npm run start
+
+4.	Open web browser and visit http://localhost:8888 to access the project 
+
 ## Credits 
 I used the following resources for my code 
 
