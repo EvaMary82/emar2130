@@ -55,4 +55,21 @@ This podcast tracker is meant to be used in the following manner:
 
 15. Mobile View: All functionality is retained in the mobile view.
 
+## Design Decisions
 
+The web application's aesthetic and functionality closely follow the submitted proposal. However, some changes were made based on the feedback received, particularly regarding the "inconsistency" in the expanded view page.
+
+1. Text Color: The text color has been changed from black to purple to address the concerns raised by the reviewer. This change aims to rectify the oversight and improve the overall consistency of the design.
+
+2. Button Placement: The placement of the next and back buttons has been altered to align with existing design patterns, ensuring a more consistent user experience.
+
+3. Modal Window Overlay: The blur overlay upon modal window pop-up has been removed. This decision was made to simplify the interface and enhance usability by reducing unnecessary complexity.
+
+Additionally, some design elements had to be adjusted to accommodate the project scope.
+
+4. Progress Bar: The originally planned progress bar as part of the multi-step form had to be omitted. This decision was made after consulting with my tutor, considering the high level of complexity associated with dynamically updating the progress bar based on user input. Instead, a simplified approach was adopted, utilizing page-based logic to control the form's contents, which reduced additional complexity.
+
+![Alt Text](public/images/pop-up%20content%20info%20final.png "Original design (progress bar)")
+![Alt Text](public/images/Final%20design%20(no%20progress%20bar).png "Final design (no progress bar)"
+![Alt Text](public/images/more%20info%20final.png ) "Original design (black text)")
+![Alt Text](public/images/Final%20design%20(purple%20text).png "Final design (purple text)")
