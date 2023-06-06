@@ -69,7 +69,7 @@ Additionally, some design elements had to be adjusted to accommodate the project
 
 4. Progress Bar: The originally planned progress bar as part of the multi-step form had to be omitted. This decision was made after consulting with my tutor, considering the high level of complexity associated with dynamically updating the progress bar based on user input. Instead, a simplified approach was adopted, utilizing page-based logic to control the form's contents, which reduced additional complexity.
 
-![Alt Text](public/images/pop-up%20content%20info%20final.png "Original design (progress bar)")
-![Alt Text](public/images/Final%20design%20(no%20progress%20bar).png "Final design (no progress bar)"
-![Alt Text](public/images/more%20info%20final.png ) "Original design (black text)")
-![Alt Text](public/images/Final%20design%20(purple%20text).png "Final design (purple text)")
+![original design ](public/images/pop-up%20content%20info%20final.png )Original design (progress bar)
+![final design](public/images/Final%20design%20(no%20progress%20bar).png)Final design (no progress bar)
+![origina design](public/images/more%20info%20final.png ) Original design (black text)
+![final design](public/images/Final%20design%20(purple%20text).png )Final design (purple text)
