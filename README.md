@@ -17,6 +17,18 @@ In terms of errors , one of the main errors that I noticed is that when I add or
  ## Video Demo 
  [![Video Demo](/public/images/landing%20page%20screenshot.png)](https://vimeo.com/833521748?share=copy)
 
+ ## Installation
+
+To install and run this project follow the steps as laid out 
+
+1.	Clone the repository using the command : git clone https:// https://github.com/EvaMary82/emar2130-tracker
+
+2.	Install dependencies. Node js using this command – npm install
+
+3.	Start server by running the command npm run start
+
+4.	Open web browser and visit http://localhost:8888 to access the project
+
  ## Responsive Design
 
 Please note that the tracker has limited responsiveness. The desktop view is optimized for a MacBook Pro 14" screen with a width of 1512px. The mobile view is designed to look best on an iPhone 13/13 Pro with a width of 390px.
@@ -73,18 +85,7 @@ Additionally, some design elements had to be adjusted to accommodate the project
 ![final design](public/images/Final%20design%20(no%20progress%20bar).png)Final design (no progress bar)
 ![origina design](public/images/more%20info%20final.png ) Original design (black text)
 ![final design](public/images/Final%20design%20(purple%20text).png )Final design (purple text)
-
-## Installation
-
-To install and run this project follow the steps as laid out 
-
-1.	Clone the repository using the command : git clone https:// https://github.com/EvaMary82/emar2130-tracker
-
-2.	Install dependencies. Node js using this command – npm install
-
-3.	Start server by running the command npm run start
-
-4.	Open web browser and visit http://localhost:8888 to access the project 
+ 
 
 ## Credits 
 I used the following resources for my code 
@@ -120,6 +121,6 @@ Javascript to fill in colour up to clicked star
 Converting rating to radio input types
 
 ![original design ](public/images/Slide%20in%20effect%20styling.png)
-styling (transaltion pattern) for slide out window 
+styling (translation pattern) for slide out window 
 
 
