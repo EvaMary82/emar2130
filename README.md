@@ -73,3 +73,18 @@ Additionally, some design elements had to be adjusted to accommodate the project
 ![final design](public/images/Final%20design%20(no%20progress%20bar).png)Final design (no progress bar)
 ![origina design](public/images/more%20info%20final.png ) Original design (black text)
 ![final design](public/images/Final%20design%20(purple%20text).png )Final design (purple text)
+
+## Installation
+## Credits 
+I used the following resources for my code 
+https://www.freecodecamp.org/news/html-symbols-html-icon-and-entity-code-list/ (symbols)
+https://codepen.io/Web_Cifar/pen/PoNNEYY (multi-step form)
+https://www.w3schools.com/tags/tag_select.asp (dropdown menu)
+chat gpt (genre picker and star rating pattern)
+![original design ](public/images/Star%20rating%20backend.png )Original design (progress bar)
+![original design ](public/images/Genre%20picker%20backend.png )Original design (progress bar)
+![original design ](public/images/Genre%20picker%20and%20star%20rating%20pattern.png) Original design (progress bar)
+![original design ](public/images/genre%20picker%3A%20star%20rating%201.png )Original design (progress bar)
+![original design ](public/images/genre%20picker%3A%20star%20rating%203.png)Original design (progress bar)
+![original design ](public/images/Slide%20in%20effect%20styling.png)Original design (progress bar)
+![original design ](public/images/js%20for%20star%20rating.png)Original design (progress bar)
