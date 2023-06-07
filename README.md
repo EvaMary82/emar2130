@@ -90,6 +90,8 @@ Additionally, some design elements had to be adjusted to accommodate the project
 ## Credits 
 I used the following resources for my code 
 
+
+
 https://www.freecodecamp.org/news/html-symbols-html-icon-and-entity-code-list/ (symbols)
 
 https://codepen.io/Web_Cifar/pen/PoNNEYY (multi-step form)
@@ -124,3 +126,7 @@ Converting rating to radio input types
 styling (translation pattern) for slide out window 
 
 
+Cifar, W. (n.d.). Multi Step Form #30days30submits #day-20. CodePen. Retrieved June 7, 2023, from https://codepen.io/Web_Cifar/details/PoNNEYY
+HTML select tag. (n.d.). Retrieved June 7, 2023, from https://www.w3schools.com/tags/tag_select.asp
+Introducing ChatGPT. (n.d.). Retrieved June 7, 2023, from https://openai.com/blog/chatgpt
+Kolade, C. (2022, May 19). HTML Symbols – HTML Icon and Entity Code List. FreeCodeCamp.Org. https://www.freecodecamp.org/news/html-symbols-html-icon-and-entity-code-list/
